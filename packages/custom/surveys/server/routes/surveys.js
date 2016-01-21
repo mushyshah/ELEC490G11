@@ -12,6 +12,9 @@ module.exports = function(Surveys, app, auth, database) {
   //Home Route
   var index = require('../controllers/index')(Surveys);
 
+    // app.route('/')
+    // .get(index.render);
+
     app.route('/api/surveys/newResponse')
     .get(function(req, res) {
       fluidApi.newResponse(function(result){
@@ -77,24 +80,5 @@ module.exports = function(Surveys, app, auth, database) {
 
         res.send("thanks");
   });
-  // app.get('/api/surveys/example/anyone', function(req, res, next) {
-  //   res.send('Anyone can access this');
-  // });
-
-  // app.get('/api/surveys/example/auth', auth.requiresLogin, function(req, res, next) {
-  //   res.send('Only authenticated users can access this');
-  // });
-
-  // app.get('/api/surveys/example/admin', auth.requiresAdmin, function(req, res, next) {
-  //   res.send('Only users with Admin role can access this');
-  // });
-
-  // app.get('/api/surveys/example/render', function(req, res, next) {
-  //   Surveys.render('index', {
-  //     package: 'surveys'
-  //   }, function(err, html) {
-  //     //Rendering a view from the Package server/views
-  //     res.send(html);
-  //   });
 
 };
