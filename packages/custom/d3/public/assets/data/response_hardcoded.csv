@@ -1,0 +1,11 @@
+group,axis,value,description
+rubric,learns independantly,3,
+rubric,self motivated,3,
+rubric,flexible learner,2,
+rubric,confident,2,
+rubric,makes connections,1,
+scale score,learns independantly,2,
+scale score,self motivated,4,
+scale score,flexible learner,4,
+scale score,confident,4,
+scale score,makes connections,1,

@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="mean.d3">
+
+<head>
+  <meta charset="utf-8">
+  <title>D3 Radar Chart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+  <link rel="stylesheet" href="/d3/assets/css/style.css" />
+
+        <!-- scripts -->
+
+  <script src="/d3/assets/scripts/d3.js"></script>
+  <script src="/d3/assets/scripts/radarDraw.js"></script>
+
+</head>
+
+<div class="container" ng-controller="D3Controller as radar">
+
+  <!-- main content -->
+  <div class="main container">
+    <h2>Visualization</h2>
+
+    <!-- visualization -->
+    <div class="visualization col-xs-7">
+      <p>Select example:
+        <select ng-options="example for example in radar.examples" ng-model="radar.exampleSelected" ng-change="radar.selectExample(radar.exampleSelected)"></select>
+      </p>
+      <div class="visualization">
+        <radar csv="radar.csv" config="radar.config"></radar>
+      </div>
+    </div>
+
+  <!-- data/file preview -->
+  <div class="preview">
+    <h2>Data</h2>
+    <pre>{{ radar.csv }}</pre>
+  </div>
+
+
+  <!-- footer -->
+  <footer>
+    <p><a href="https://gist.github.com/chrisrzhou/2421ac6541b68c1680f8" target="_blank">D3 Radar Chart</a> by chrisrzhou, 2015-01-15
+      <br />
+      <a href="http://github.com/chrisrzhou" target="_blank"><i class="fa fa-github"></i></a> |
+      <a href="http://bl.ocks.org/chrisrzhou" target="_blank"><i class="fa fa-cubes"></i></a> |
+      <a href="http://www.linkedin.com/in/chrisrzhou" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </p>
+  </footer>
+
+
+
+</div>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "angular-ui-router",
+  "license": "MIT",
+  "main": "./release/angular-ui-router.js",
+  "dependencies": {
+    "angular": ">= 1.0.8"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "component.json",
+    "package.json",
+    "lib",
+    "config",
+    "sample",
+    "test",
+    "tests",
+    "ngdoc_assets",
+    "Gruntfile.js",
+    "files.js"
+  ],
+  "homepage": "https://github.com/angular-ui/ui-router",
+  "_release": "2d23875c21",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2d23875c211bf3169fbec5c24e05a351b6b969dc"
+  },
+  "_source": "git://github.com/angular-ui/ui-router.git",
+  "_target": "master",
+  "_originalSource": "angular-ui-router"
+}
