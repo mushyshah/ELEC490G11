@@ -75,7 +75,9 @@ module.exports = function(Surveys, app, auth, database) {
             res.send(err);
           });
 
-        console.log('\n\nResponse Complete: %j',result) + '\n';
+            var complete = req.body;
+
+        console.log('\n\nResponse Complete: %j',complete) + '\n';
         });
 
         res.send("thanks");
