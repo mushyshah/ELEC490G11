@@ -13,7 +13,7 @@ var Surveys = new Module('surveys');
  */
 Surveys.register(function(app, auth, database) {
 
-  app.set('views', __dirname + '/server/views');
+  //app.set('views', __dirname + '/server/views');
 
   //We enable routing. By default the Package Object is passed to the routes
   Surveys.routes(app, auth, database);
