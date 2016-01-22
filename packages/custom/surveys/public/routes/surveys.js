@@ -7,7 +7,7 @@ angular.module('mean.surveys').config(['$stateProvider', '$viewPathProvider',
       templateUrl: 'surveys/views/index.html'
     });
 
-    $viewPathProvider.override('system/views/index.html', 'surveys/views/index.html');
+    //$viewPathProvider.override('system/views/index.html', 'surveys/views/index.html');
 
   }
 ]);
