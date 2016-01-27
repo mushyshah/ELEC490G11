@@ -46,18 +46,18 @@ body {
     .close-btn {
         cursor: pointer;
         padding: 2% 5%;
-        background: #800000; 
+        background: #05203B; 
         color:white;
 		font-family:calibri;
     }
     .close-btn:hover {
-        background: red;
+        background: blue;
     }
 	
 	.next-btn {
 		cursor: pointer;
 		padding: 0.5% 1%;
-        background: #3333cc; 
+        background: #05203B; 
         color:white;
 		font-family:calibri;
 	}

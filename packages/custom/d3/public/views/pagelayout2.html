@@ -10,12 +10,11 @@
   <script src="/d3/assets/scripts/d3.js"></script>
   <script src="/d3/assets/scripts/radarDraw.js"></script>
 
-
 	<meta charset="utf-8">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 	<style>
 		#nav {
-				background-color:#800000;
+				background-color:#05203B;
 				color:white; 
 				text-align:left;
 				font-family:calibri;
@@ -868,13 +867,15 @@
 					updateReadings();
 				}
 				
-				if ( !window.isLoaded ) {
-					window.addEventListener("load", function() {
-						onDocumentReady();
-					}, false);
-					} else {
-					onDocumentReady();
-				}
+				// if ( !window.isLoaded ) {
+				// 	window.addEventListener("load", function() {
+				// 		onDocumentReady();
+				// 	}, false);
+				// 	} else {
+				// 	onDocumentReady();
+				// }
+
+				onDocumentReady();
 			</script>  
 			</div>		
 		</div>
