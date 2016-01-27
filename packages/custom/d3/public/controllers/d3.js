@@ -18,8 +18,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       console.log("\n\n\nWHASSUPNO\n\n\n");
       // initialize controller variables
       ctrl.examples = [
-      "response1",
-      "data_the_avengers",
+      //"response1",
+      //"data_the_avengers",
 		  "response_hardcoded"
       ];
       ctrl.exampleSelected = ctrl.examples[0];
