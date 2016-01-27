@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Helvetica Neue','Helvetica', Arial, sans-serif;
+}
+
+
+#feedback{
+	height:400px;
+	width:400px;
+}
+ 
+.overlay-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1000; /* high z-index */
+    background: #000; /* fallback */
+    background: rgba(0,0,0,0.75);
+}
+    .overlay-content {
+        display: none;
+        background: #fff;
+        padding: 1%;
+        width: 40%;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        margin: 0 0 0 -20%; /* add negative left margin for half the width to center the div */
+        cursor: default;
+        z-index: 10001;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    }
+ 
+    .close-btn {
+        cursor: pointer;
+        padding: 2% 5%;
+        background: #800000; 
+        color:white;
+		font-family:calibri;
+    }
+    .close-btn:hover {
+        background: red;
+    }
+	
+	.next-btn {
+		cursor: pointer;
+		padding: 0.5% 1%;
+        background: #3333cc; 
+        color:white;
+		font-family:calibri;
+	}
+	.next-btn:hover{
+		background:blue;
+	}
+ 
+/* media query for most mobile devices */
+@media only screen and (min-width: 0px) and (max-width: 480px){
+ 
+    .overlay-content {
+        width: 96%;
+        margin: 0 2%;
+        left: 0;
+    }
+}
