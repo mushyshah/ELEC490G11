@@ -35,12 +35,31 @@ module.exports = function(Surveys, app, auth, database) {
 
   app.route('/api/surveys/findResponse/:responseid')
     .get(function(req, res) {
-      responseModel.findOne({responseid:req.params.responseid}, function(err, response) {
-            if (err)
-                res.send(err);
-            //res.json(response);
-             console.log('\n\nResponse Complete: %j',response) + '\n';
-        });
+        responseCheck.responseCheck(req.params.responseid,function(result){
+        //res.json(result);
+        var x = 'group,axis,value,description\n'+
+            'Rubric,Learns Independently,'+result.OR+', \n'+
+            'Rubric,Self Motivated,'+result.OMR+', \n'+
+            'Rubric,Flexible Learner,'+result.LBR+', \n'+
+            'Rubric,Confident,'+result.SER+', \n'+
+            'Rubric,Makes Connections,'+result.TRR+', \n'+
+            'Your Score,Learns Independently,'+result.OSS+', \n'+
+            'Your Score,Self Motivated,'+result.OMSS+', \n'+
+            'Your Score,Flexible Learner,'+result.LBSS+', \n'+
+            'Your Score,Confident,'+result.SESS+', \n'+
+            'Your Score,Makes Connections,'+result.TRSS+', '
+            ;
+        res.send(x);
+      //console.log('\n\nResponse Data: %j',result) + '\n';
+      });
+ 
+   // app.route('/api/surveys/findResponse/:responseid')
+   //  .get(function(req, res) {
+   //      fluidApi.responseCompleted(req.params.responseid,function(result){
+   //      res.json(result);
+   //    //console.log('\n\nResponse Data: %j',result) + '\n';
+   //    });
+
     });
 
     app.route('/api/surveys/isResponseComplete/:responseid')

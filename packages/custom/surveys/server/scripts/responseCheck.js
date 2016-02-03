@@ -22,7 +22,8 @@ exports.responseCheck = function(responseid,result){
         });   
 };*/
 
-exports.responseCheck = function(responseid,result){
+
+exports.responseCheck = function(responseid, result){
 
     responseModel.findOne(responseid, function(err, response) {
             if (err)

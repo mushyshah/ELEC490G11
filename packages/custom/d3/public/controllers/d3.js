@@ -53,8 +53,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
     // function selectExample
     function selectExample(item) {
-      $http.get('/api/d3/helpp/'+item).success(function(data) {
-        console.log("\n\n\nWHASSUPUO OLA\n\n\n");
+      $http.get('/api/surveys/findResponse/56433548/').success(function(data) {
+        console.log(data);
         ctrl.csv = data;
       });
       console.log("\n\n\nWHASSUPNO\n\n\n");
