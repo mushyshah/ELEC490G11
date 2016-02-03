@@ -2,8 +2,8 @@
 
 /* jshint -W098 */
 angular.module('mean.surveys').controller('SurveysController', ['$scope', 'Global', 'Surveys', 
-	'$http', '$sce', '$timeout',
-  function($scope, Global, Surveys, $http, $sce, $timeout, $interval) {
+	'$http', '$sce', '$timeout', '$location',
+  function($scope, Global, Surveys, $http, $sce, $timeout, $location, $interval) {
 
 var initializing = true;
 $scope.completed = 0;
@@ -60,9 +60,10 @@ $scope.tick = function(resid) {
             console.log('IS IT COMPLETED? %d',data.completed);
             $scope.completed = data.completed;
 
-            if(data.completed==1)
+            if(data.completed==1){
+              $location = '/d3/example';
               return;
-
+            }
             $timeout(function(){$scope.tick(resid)}, 1000);
         });
   };

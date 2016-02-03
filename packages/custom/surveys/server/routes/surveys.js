@@ -52,6 +52,21 @@ module.exports = function(Surveys, app, auth, database) {
         res.send(x);
       //console.log('\n\nResponse Data: %j',result) + '\n';
       });
+  });
+
+app.route('/api/surveys/gaugeData/:responseid')
+    .get(function(req, res) {
+        responseCheck.responseCheck(req.params.responseid,function(result){
+        var response = {};
+        response['OSS'] = result.OSS;
+        response['OMSS'] = result.OMSS;
+        response['LBSS'] = result.LBSS;
+        response['SESS'] = result.SESS;
+        response['TRSS'] = anotherresult.TRSS;
+
+        res.json(response);
+      //console.log('\n\nResponse Data: %j',result) + '\n';
+      });
  
    // app.route('/api/surveys/findResponse/:responseid')
    //  .get(function(req, res) {
@@ -81,23 +96,7 @@ module.exports = function(Surveys, app, auth, database) {
 
   app.route('/api/surveys/responseComplete')
     .post(function(req, res) {
-
-        responseModel.findOne({responseid:req.body._id}, function(err, result) {
-            if (err)
-                res.send(err);
-
-            // save the response and check for errors
-            result.completed = 1;
-
-            result.save(function(err) {
-            if (err)
-            res.send(err);
-          });
-
-            var complete = req.body;
-
-        console.log('\n\nResponse Complete: %j',complete) + '\n';
-        });
+        fluidApi.responseCompleted({responseid:req.body._id},function(result));
 
         res.send("thanks");
   });

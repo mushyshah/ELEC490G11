@@ -14,7 +14,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
     // function init
     function init() {
-
+    $scope.random = 5;
       console.log("\n\n\nWHASSUPNO\n\n\n");
       // initialize controller variables
       ctrl.examples = [

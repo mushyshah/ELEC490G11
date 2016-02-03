@@ -848,13 +848,24 @@
 						transitionMs: 3000,
 					});
 					
-					function updateReadings() {
-						// just pump in random data here...
-						powerGauge1.update(0.5); //<--------------------------------------------------------------------gauge values
-						powerGauge2.update(1);
-						powerGauge3.update(2);
-						powerGauge4.update(3);
-						powerGauge5.update(3.5);
+					function updateReadings(c) {
+
+						// $http.get('/api/surveys/gaugeData/56433548/').success(function(data) {
+					 //        console.log(data);
+					      
+						// // just pump in random data here...
+						// powerGauge1.update(data.OSS); //<-------------------------------------gauge values
+						// powerGauge2.update(data.OMSS);
+						// powerGauge3.update(data.LBSS);
+						// powerGauge4.update(data.SESS);
+						// powerGauge5.update(data.TRSS);
+
+						powerGauge1.update(c); //<-------------------------------------gauge values
+						powerGauge2.update(c);
+						powerGauge3.update(c);
+						powerGauge4.update(c);
+						powerGauge5.update(c);
+						// });
 					}
 									
 					powerGauge1.render();
