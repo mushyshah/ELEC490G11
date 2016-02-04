@@ -8,7 +8,8 @@ exports.newResponse = function(result){
     var options = {
       host: 'queensu.fluidsurveys.com',
       port: '443',
-      path: '/api/v3/surveys/980627/responses/',
+      path: '/api/v3/surveys/987323/responses/',
+      //path: '/api/v3/surveys/980627/responses/',
       //Authorization: 'Basic MW1tczNAcXVlZW5zdS5jYTpicmlhbmZyYW5r',
       method: 'POST',
       headers: {
@@ -49,7 +50,7 @@ exports.responseCompleted = function(responseid, output){
     var options = {
       host: 'queensu.fluidsurveys.com',
       port: '443',
-      path: '/api/v3/surveys/980627/responses/'+responseid+'/',
+      path: '/api/v3/surveys/987323/responses/'+responseid+'/',
       //Authorization: 'Basic MW1tczNAcXVlZW5zdS5jYTpicmlhbmZyYW5r',
       method: 'GET',
       headers: {
