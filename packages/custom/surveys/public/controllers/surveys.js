@@ -31,11 +31,13 @@ $scope.evaluate = function(value){
 
     console.log('EVALUATED'+value);
 
-    if(value==0)
-      return false;
-    else
+    if(value==0){
+      $location = '/d3/example';
+      return false;}
+    else{
+      $location = '/d3/example';
       return true;
-
+        }
 }
    /*
 $scope.responseComplete = function (resid){
