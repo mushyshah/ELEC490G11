@@ -51,7 +51,7 @@ exports.responseCompleted = function(responseid, output){
       host: 'queensu.fluidsurveys.com',
       port: '443',
       //path: '/api/v3/surveys/987323/responses/'+responseid+'/',
-      path: '/api/v3/surveys/980627/responses/',
+      path: '/api/v3/surveys/980627/responses/'+responseid+'/',
       //Authorization: 'Basic MW1tczNAcXVlZW5zdS5jYTpicmlhbmZyYW5r',
       method: 'GET',
       headers: {
