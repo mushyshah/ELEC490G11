@@ -35,6 +35,8 @@ module.exports = function(Surveys, app, auth, database) {
 
   app.route('/api/surveys/findResponse/:responseid')
     .get(function(req, res) {
+
+      console.log('responseid = '+req.params.responseid);
         responseCheck.responseCheck(req.params.responseid,function(result){
         //res.json(result);
         var x = 'group,axis,value,description\n'+

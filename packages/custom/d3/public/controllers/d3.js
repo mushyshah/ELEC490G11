@@ -1,8 +1,8 @@
 'use strict';
 
 /* jshint -W098 */
-angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','$http',
-  function($scope, Global, D3, $http) {
+angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','$http', '$stateParams',
+  function($scope, Global, D3, $http, $stateParams) {
     $scope.global = Global;
     $scope.package = {
       name: 'd3'
@@ -14,7 +14,12 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
     // function init
     function init() {
+
+    $scope.responseID = $stateParams.responseID;
+
+    console.log("D3 CONTROLLER RESPONSE ID: " + $scope.surveyID); 
     $scope.random = 5;
+
       console.log("\n\n\nWHASSUPNO\n\n\n");
       // initialize controller variables
       ctrl.examples = [
@@ -53,7 +58,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
     // function selectExample
     function selectExample(item) {
-      $http.get('/api/surveys/findResponse/56433548/').success(function(data) {
+      $http.get('/api/surveys/findResponse/'+$scope.responseID).success(function(data) {
         console.log(data);
         ctrl.csv = data;
       });

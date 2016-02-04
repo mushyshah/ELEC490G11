@@ -127,7 +127,7 @@ exports.responseCompleted = function(responseid, output){
 
                           result.save(function(err) {
                           if (err)
-                          res.send(err);
+                          output.send('NO-DATA');
                         });
 
                 //     var complete = req.body;
