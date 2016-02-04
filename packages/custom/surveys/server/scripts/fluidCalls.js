@@ -82,6 +82,7 @@ exports.responseCompleted = function(responseid, output){
 
                     // save the response and check for errors
                     result.completed = 1;
+                    result.responseid = responseid;
 
                     //var OM2r = res.body.7yUn21RPTu;
 
