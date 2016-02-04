@@ -10,6 +10,7 @@ $scope.completed = 0;
 
 $scope.init = function () {
     
+
      $http.get('/api/surveys/newResponse')
         .success(function(data) {
             $scope.fluidResponse = data.url;
@@ -31,13 +32,13 @@ $scope.evaluate = function(value){
 
     console.log('EVALUATED'+value);
 
-    if(value==0){
-      $location = '/d3/example';
-      return false;}
-    else{
-      $location = '/d3/example';
+    if(value==0)
+      return false;
+    else
+    {
+      $location.path('/d3/example');
       return true;
-        }
+    }
 }
    /*
 $scope.responseComplete = function (resid){
@@ -62,10 +63,9 @@ $scope.tick = function(resid) {
             console.log('IS IT COMPLETED? %d',data.completed);
             $scope.completed = data.completed;
 
-            if(data.completed==1){
-              $location = '/d3/example';
+            if(data.completed==1)
               return;
-            }
+            
             $timeout(function(){$scope.tick(resid)}, 1000);
         });
   };
