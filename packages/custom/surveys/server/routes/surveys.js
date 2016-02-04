@@ -96,7 +96,9 @@ app.route('/api/surveys/gaugeData/:responseid')
 
   app.route('/api/surveys/responseComplete')
     .post(function(req, res) {
-        fluidApi.responseCompleted({responseid:req.body._id},function(result){});
+
+        console.log("RESPONSE COMPLETED = "+req.body);
+        //fluidApi.responseCompleted(req.body._id,function(result){});
 
         res.send("thanks");
   });
