@@ -6,7 +6,7 @@
 module.exports = function(D3, app, auth, database) {
 
   app.get('/api/d3/example/render', function(req, res, next) {
-    D3.render('index', {
+    D3.render('pagelayout2', {
       package: 'd3'
     }, function(err, html) {
       //Rendering a view from the Package server/views
