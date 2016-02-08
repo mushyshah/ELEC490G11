@@ -29,8 +29,6 @@ exports.responseCheck = function(responseid, result){
             if (err)
                 console.log(err);
 
-                response.updated=0;
-
                 response.save(function(err) {
                           if (err)
                           output.send('NO-DATA');

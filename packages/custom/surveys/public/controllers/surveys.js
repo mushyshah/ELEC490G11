@@ -7,7 +7,6 @@ angular.module('mean.surveys').controller('SurveysController', ['$scope', 'Globa
 
 var initializing = true;
 $scope.completed = 0;
-$scope.updated = 0;
 
 $scope.init = function () {
     
@@ -63,7 +62,6 @@ $scope.tick = function(resid) {
         $http.get('/api/surveys/isResponseComplete/'+resid).success(function (data) {
             console.log('IS IT COMPLETED? %d %d',data.completed,data.updated);
             $scope.completed = data.completed;
-            $scope.updated = data.updated;
 
             if(data.completed==1)
               return;

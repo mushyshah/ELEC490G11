@@ -105,13 +105,4 @@ app.route('/api/surveys/gaugeData/:responseid')
         res.send("thanks");
   });
 
-  app.route('/api/surveys/responseUpdated')
-    .post(function(req, res) {
-
-        console.log("RESPONSE UPDATED = "+req.body._id);
-        fluidApi.responseUpdated(req.body._id,function(result){});
-
-        res.send("thanks");
-  });
-
 };
