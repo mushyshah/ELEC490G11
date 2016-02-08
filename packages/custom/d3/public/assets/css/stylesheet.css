@@ -59,7 +59,7 @@ body {
 		padding: 0.5% 1%;
         background: #05203B; 
         color:white;
-		font-family:calibri;
+        font-size: 14pt;
 	}
 	.next-btn:hover{
 		background:blue;
