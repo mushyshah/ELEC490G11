@@ -152,3 +152,73 @@ exports.responseCompleted = function(responseid, output){
 
     //return result;
 }
+
+exports.responseUpdated = function(responseid, output){
+   
+    var options = {
+      host: 'queensu.fluidsurveys.com',
+      port: '443',
+      //path: '/api/v3/surveys/987323/responses/'+responseid+'/',
+      path: '/api/v3/surveys/980627/responses/'+responseid+'/',
+      //Authorization: 'Basic MW1tczNAcXVlZW5zdS5jYTpicmlhbmZyYW5r',
+      method: 'GET',
+      headers: {
+        'Authorization': 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'
+      }
+    };
+
+    //var result;
+    var req = https.request(options,function(res) {
+
+      // res is here
+             console.log(options.host + options.path + ':' + res.statusCode);
+             res.setEncoding('utf8');
+      // Continuously update stream with data
+            var body = '';
+            res.on('data', function(d) {
+                body += d;
+            });
+
+          res.on('end', function() {
+
+              // Data reception is done, do whatever with it!
+              var parsed = JSON.parse(body);
+              //output(parsed);
+              console.log("\n\nGET RESPONSE:\n"+ parsed + "\n\n");
+
+                    responseModel.findOne(responseid, function(err, result) {
+                    // if (err)
+                    //     res.send(err);
+
+                    // save the response and check for errors
+                    result.updated = 1;
+                    result.responseid = responseid;
+
+                          result.save(function(err) {
+                          if (err)
+                          output.send('NO-DATA');
+                        });
+
+                //     var complete = req.body;
+
+                // console.log('\n\nResponse Complete: %j',complete) + '\n';
+
+                 console.log('\n\nSAVED STUFF: \n' + result) + '\n';
+                 output(result);
+
+                  });
+          });
+
+ 
+
+
+    });
+
+    // write the request parameters
+    //req.write(':id:'+responseid);
+    req.write('');
+    req.end();
+
+    //return result;
+}
+

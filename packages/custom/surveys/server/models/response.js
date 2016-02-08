@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var ResponseSchema = new Schema({
 	responseid: Number,
 	completed: Number,
+	updated: Number,
 
 	OM1: Number,
 	OM2r: Number,
