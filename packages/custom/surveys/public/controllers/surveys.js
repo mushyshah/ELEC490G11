@@ -60,7 +60,7 @@ $scope.responseComplete = function (resid){
 
 $scope.tick = function(resid) {
         $http.get('/api/surveys/isResponseComplete/'+resid).success(function (data) {
-            console.log('IS IT COMPLETED? %d %d',data.completed,data.updated);
+            console.log('IS IT COMPLETED? %d',data.completed);
             $scope.completed = data.completed;
 
             if(data.completed==1)
