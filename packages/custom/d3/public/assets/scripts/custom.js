@@ -31,7 +31,6 @@ $(document).ready(function(){
    
     // hide popup when user clicks on close button or if user clicks anywhere outside the container
     $('.close-btn, .overlay-bg').click(function(){
-        console.log("GAUSGE PLS");
         closePopup();
     });
      

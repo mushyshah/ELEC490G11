@@ -38,20 +38,20 @@ module.exports = function(Surveys, app, auth, database) {
 
       console.log('responseid = '+req.params.responseid);
         responseCheck.responseCheck(req.params.responseid,function(result){
-        //res.json(result);
-        var x = 'group,axis,value,description\n'+
-            'Rubric,Learns Independently,'+result.OR+', \n'+
-            'Rubric,Self Motivated,'+result.OMR+', \n'+
-            'Rubric,Flexible Learner,'+result.LBR+', \n'+
-            'Rubric,Confident,'+result.SER+', \n'+
-            'Rubric,Makes Connections,'+result.TRR+', \n'+
-            'Your Score,Learns Independently,'+result.OSS+', \n'+
-            'Your Score,Self Motivated,'+result.OMSS+', \n'+
-            'Your Score,Flexible Learner,'+result.LBSS+', \n'+
-            'Your Score,Confident,'+result.SESS+', \n'+
-            'Your Score,Makes Connections,'+result.TRSS+', '
-            ;
-        res.send(x);
+        res.json(result);
+        // var x = 'group,axis,value,description\n'+
+        //     'Rubric,Learns Independently,'+result.OR+', \n'+
+        //     'Rubric,Self Motivated,'+result.OMR+', \n'+
+        //     'Rubric,Flexible Learner,'+result.LBR+', \n'+
+        //     'Rubric,Confident,'+result.SER+', \n'+
+        //     'Rubric,Makes Connections,'+result.TRR+', \n'+
+        //     'Your Score,Learns Independently,'+result.OSS+', \n'+
+        //     'Your Score,Self Motivated,'+result.OMSS+', \n'+
+        //     'Your Score,Flexible Learner,'+result.LBSS+', \n'+
+        //     'Your Score,Confident,'+result.SESS+', \n'+
+        //     'Your Score,Makes Connections,'+result.TRSS+', '
+        //     ;
+        //res.send(x);
       //console.log('\n\nResponse Data: %j',result) + '\n';
       });
   });

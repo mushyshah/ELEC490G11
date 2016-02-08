@@ -13,13 +13,26 @@ function radarDraw(scope, element) {
     var config = scope.config;
     var data = csv2json(csv);
     RadarChart.draw(element[0], data, config);  // call the D3 RadarChart.draw function to draw the vis on changes to data or config
+    //updateReadings(csv);
   });
 
 
   // helper function csv2json to return json data from csv
   function csv2json(csv) {
-    csv = csv.replace(/, /g, ","); // trim leading whitespace in csv file
-    var json = d3.csv.parse(csv); // parse csv string into json
+    //csv = csv.replace(/, /g, ","); // trim leading whitespace in csv file
+    var x = 'group,axis,value,description\n'+
+            'Rubric,Learns Independently,'+csv.OR+', \n'+
+            'Rubric,Self Motivated,'+csv.OMR+', \n'+
+            'Rubric,Flexible Learner,'+csv.LBR+', \n'+
+            'Rubric,Confident,'+csv.SER+', \n'+
+            'Rubric,Makes Connections,'+csv.TRR+', \n'+
+            'Your Score,Learns Independently,'+csv.OSS+', \n'+
+            'Your Score,Self Motivated,'+csv.OMSS+', \n'+
+            'Your Score,Flexible Learner,'+csv.LBSS+', \n'+
+            'Your Score,Confident,'+csv.SESS+', \n'+
+            'Your Score,Makes Connections,'+csv.TRSS+', '
+            ;
+    var json = d3.csv.parse(x); // parse csv string into json
     // reshape json data
     var data = [];
     var groups = []; // track unique groups

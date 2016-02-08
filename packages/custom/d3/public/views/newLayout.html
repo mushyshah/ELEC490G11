@@ -1,0 +1,263 @@
+<!doctype html>
+<html ng-app="mean.d3">
+<head>
+    <meta content="width=320px, initial-scale=1, user-scalable=yes" name="viewport" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/d3/assets/css/stylesheet.css" />
+  <!-- scripts -->
+  <script type="text/javascript" src="/d3/assets/scripts/custom.js"></script>
+  <script type="text/javascript" src="/d3/assets/scripts/gauges.js"></script>
+  <script src="/d3/assets/scripts/d3.js"></script>
+  <script src="/d3/assets/scripts/radarDraw.js"></script>
+
+
+	<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	<style>
+		#nav {
+				background-color:#05203b;
+				color:white; 
+				text-align:left;
+				font-family:calibri;
+			}
+			
+			#power-gauge1 g.arc {
+			fill: steelblue;
+			}
+			
+			#power-gauge1 g.pointer {
+			fill: #e85116;
+			stroke: #b64011;
+			}
+			
+			#power-gauge1 g.label text {
+			text-anchor: middle;
+			font-size: 14px;
+			font-weight: bold;
+			fill: #666;
+			}
+			
+			#power-gauge2 g.arc {
+			fill: steelblue;
+			}
+			
+			#power-gauge2 g.pointer {
+			fill: #e85116;
+			stroke: #b64011;
+			}
+			
+			#power-gauge2 g.label text {
+			text-anchor: middle;
+			font-size: 14px;
+			font-weight: bold;
+			fill: #666;
+			}
+			
+			#power-gauge3 g.arc {
+			fill: steelblue;
+			}
+			
+			#power-gauge3 g.pointer {
+			fill: #e85116;
+			stroke: #b64011;
+			}
+			
+			#power-gauge3 g.label text {
+			text-anchor: middle;
+			font-size: 14px;
+			font-weight: bold;
+			fill: #666;
+			}
+			
+			#power-gauge4 g.arc {
+			fill: steelblue;
+			}
+			
+			#power-gauge4 g.pointer {
+			fill: #e85116;
+			stroke: #b64011;
+			}
+			
+			#power-gauge4 g.label text {
+			text-anchor: middle;
+			font-size: 14px;
+			font-weight: bold;
+			fill: #666;
+			}
+			
+			#power-gauge5 g.arc {
+			fill: steelblue;
+			}
+			
+			#power-gauge5 g.pointer {
+			fill: #e85116;
+			stroke: #b64011;
+			}
+			
+			#power-gauge5 g.label text {
+			text-anchor: middle;
+			font-size: 14px;
+			font-weight: bold;
+			fill: #666;
+			}
+	</style>
+</head>
+<body>
+ 
+    <!-- Your Content Here -->
+	<br>
+	<div id="nav" >
+			<p style = "padding-left: 50px;"><b>Your Transferable Learning Outcomes Survey Results</b></p>
+	</div>
+	<div style = "text-align:center;">
+		<div class="container" ng-controller="D3Controller as radar"> <!-- changed body to div -->
+			<!-- main content -->
+			<div class="main container">
+				<!-- visualization -->
+				<div class="visualization col-xs-7">
+					<div class="visualization">
+						<radar csv="radar.csv" config="radar.config"></radar>
+					</div>
+				</div>
+			</div>
+
+<div class="overlay-content popup1">
+    <div id="nav" >
+			<p style = "text-align:center;"><b>Your Results</b></p>
+		</div>
+	<div style = "text-align:center;">
+		<!-- main content -->
+		<div class="main container">
+			<!-- visualization -->
+			<div class="visualization col-xs-7">
+				<div class="visualization">
+					<radar csv="radar.csv" config="radar.config"></radar>
+				</div>
+			</div>
+			<script>
+				// Hack to make this example display correctly in an iframe on bl.ocks.org
+				//d3.select(self.frameElement).style("height", "1000px");
+			</script>
+		</div>
+		<p style = "text-align:center; font-family:calibri">Thank you for taking the time to complete our survey!<br>
+		Above is a spider diagram showing your results.
+		When you are ready, please feel free to 
+		examine your results in more detail.</p>
+		<div style = "text-align:center;">
+			<button class="close-btn">Read More</button>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+	<div>	
+		<p style = "padding-left: 50px; padding-right:50px; padding:20px;">This survey evaluated your learning strategies on five different
+		dimension. Please take a look at each of them and reflect on what
+		the results mean to you. We encourage you to leave feedback on your
+		results to let us know what you think about what we have reported.</p>
+	</div>
+	<div>
+	</div>
+	<br>
+	<div id = "nav" style = "width: 190px">
+	<p style = "text-align:center;"><b>More details</b></p>
+	</div>
+	<br>
+	<div style="border: thin solid black; 
+				background-color:#f2f2f2;
+				border-radius: 25px;
+				margin-left:25px; 
+				margin-right: 25px; 
+				padding-right:5px">
+	<table>
+	<tr>
+	<td>
+	<div id="power-gauge1" style = "margin-top:-50px">
+</div>
+</td>
+<td>
+<div  style = "margin-top:-50px">
+<b> Learns Independently</b>
+<br>
+<p>Etiam non quam mi. Donec dapibus, tortor eget sagittis semper, orci purus finibus erat, eget aliquam nunc eros in dui. Maecenas tincidunt efficitur est vitae cursus. Fusce molestie vehicula lorem sed scelerisque. Phasellus tempor, lectus eget tristique dignissim, lacus lectus convallis metus, pulvinar sodales nulla purus nec nulla.</p>
+</div>
+</td>
+</tr>
+<br>
+<tr>
+<td>
+	<div id="power-gauge2">
+			</div>
+			</div>
+		</div>
+	</div>
+<div>
+</td>
+<td>
+<b>Self-Motivation</b>
+<br>
+<p>Sed elementum eros id nisl aliquet, pharetra consectetur nulla vehicula. Nunc quis sagittis orci. Mauris convallis, mi nec tincidunt pretium, odio magna condimentum urna, id placerat augue felis vel tortor. Nulla tincidunt semper leo, a tincidunt sem euismod tempor.</p>
+</td>
+</tr>
+<br>
+<tr>
+<td>
+<div id="power-gauge3">
+		</div>
+	</div>
+</div>
+</td>
+<td>
+<b>Flexible Learner</b>
+<br>
+<p>Fusce molestie est magna, ut elementum turpis gravida vitae. Donec tincidunt, massa vel imperdiet tempus, nisl metus egestas arcu, suscipit tempus dui neque ut nulla. Aliquam pharetra vitae ante eu semper. Nunc efficitur aliquet libero. Sed in erat diam.</p>
+</td>
+</tr>
+<br>
+<tr>
+<td>
+	<div id="power-gauge4">
+			</div>
+			</td>
+			<td>
+			<b>Confidence</b>
+			<p>Vestibulum vel congue nulla, quis cursus urna. Proin blandit feugiat turpis, scelerisque elementum orci ultricies quis. Mauris gravida pretium magna, ac pharetra tortor faucibus nec. Cras blandit velit viverra auctor mollis. Aliquam erat volutpat. Fusce mattis mattis nisi ac malesuada.</p>
+			<br>
+			</td>
+			</tr>
+			<br>
+			<tr>
+			<td>
+	<div id="power-gauge5">
+			</div>
+			</td>
+			<td>
+			<b>Makes Connections</b>
+			<br>
+			<p>Etiam eleifend urna magna, molestie mattis urna volutpat eget. Nullam mi risus, laoreet ut consequat at, blandit quis velit. Sed vitae eros quam. Maecenas nec aliquet libero. Nullam sit amet fermentum nulla. Suspendisse potenti. Praesent non venenatis odio, nec auctor nisl. </p>
+			</td>
+			</tr>
+			</table>
+			</div> 
+			</div>		
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<div id = "nav" style = "width: 190px;">
+<p style = "text-align:center;"><b>Feedback</b></p>
+</div>
+<br>
+<div style="padding-left: 50px">
+<p>What do you think about your results?</p>
+<textarea rows="10" cols="150"></textarea>
+</div>
+<div style = "padding-left: 1220px">
+<button class="next-btn">Submit</button>
+</div>
+<div class="overlay-bg">
+</div>
+
+</body>
+</html>
