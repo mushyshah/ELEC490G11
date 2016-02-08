@@ -17,7 +17,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     // function init
     function init() {
     $scope.responseID = $stateParams.responseID;
-    console.log("D3 CONTROLLER RESPONSE ID: " + $scope.surveyID); 
+    console.log("D3 CONTROLLER RESPONSE ID: " + $scope.responseID); 
     $scope.random = 5;
 
       console.log("\n\n\nWHASSUPNO\n\n\n");
