@@ -1,21 +1,19 @@
 'use strict';
 
 /* jshint -W098 */
-angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','$http', '$stateParams',
-  function($scope, Global, D3, $http, $stateParams) {
+angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','$http', '$stateParams', 
+  '$location', function($scope, Global, D3, $http, $stateParams, $location) {
     $scope.global = Global;
     $scope.package = {
       name: 'd3'
     };
 
-     var ctrl = this;
+    var ctrl = this;
     init();
-
-
-    
 
     // function init
     function init() {
+    $location.url($location.path());
     $scope.responseID = $stateParams.responseID;
     console.log("D3 CONTROLLER RESPONSE ID: " + $scope.responseID); 
     $scope.random = 5;
