@@ -13,8 +13,9 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
     // function init
     function init() {
-    $location.url($location.path());
+    $scope.feedbackMessage = "";
     $scope.responseID = $stateParams.responseID;
+    //$location.url('/d3/example/');
     console.log("D3 CONTROLLER RESPONSE ID: " + $scope.responseID); 
     $scope.random = 5;
 
@@ -49,10 +50,21 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       };
     }
 
+
     // function getData
     function getData($fileContent) {
       ctrl.csv = $fileContent;
     }
+
+    $scope.submitFeedback = function() {
+        var data = {
+                      'feedbackMessage': $scope.feedbackMessage,
+                      'responseID': $scope.responseID
+                    };
+        $http.post("/api/surveys/postFeedback", data).success(function(data, status) {
+            console.log("Feedback Posted");
+        })
+    }      
 
     // function selectExample
     function selectExample(item) {

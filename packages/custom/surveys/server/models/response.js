@@ -7,6 +7,8 @@ var ResponseSchema = new Schema({
 	responseid: Number,
 	completed: Number,
 	updated: Number,
+	feedbackMessage: String,
+	feedbackComplete: Number,
 
 	OM1: Number,
 	OM2r: Number,

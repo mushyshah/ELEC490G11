@@ -37,6 +37,8 @@ exports.newResponse = function(result){
 
     });
 
+
+
     // write the request parameters
     req.write('');
     req.end();
@@ -44,6 +46,28 @@ exports.newResponse = function(result){
     // console.log('\n\nURL RESULT: ' + result.url) + '\n';
     //return result;
 }
+
+exports.submitFeedback = function(responseid,message,result){
+   
+  var request = require("request");
+
+var options = { method: 'PUT',
+  url: 'http://queensu.fluidsurveys.com/api/v3/surveys/980627/responses/'+responseid+'/',
+  headers: 
+   { 'cache-control': 'no-cache',
+     authorization: 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'},
+  formData: { cTATXC7Msw: message } };
+
+request(options, function (error, response, body) {
+  console.log(options.host + options.path + ':' + response.statusCode);
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+
+}
+
+
 
 exports.responseCompleted = function(responseid, output){
    
@@ -139,9 +163,6 @@ exports.responseCompleted = function(responseid, output){
 
                   });
       });
-
- 
-
 
     });
 

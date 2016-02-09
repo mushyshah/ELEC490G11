@@ -23,6 +23,7 @@ module.exports = function(Surveys, app, auth, database) {
         var response = new responseModel();      // create a new instance 
         response.responseid = result._id;  // set id
         response.completed = 0;
+        response.feedbackComplete = 0;
         // save the response and check for errors
         response.save(function(err) {
             if (err)
@@ -103,6 +104,18 @@ app.route('/api/surveys/gaugeData/:responseid')
         fluidApi.responseCompleted(req.body._id,function(result){});
 
         res.send("thanks");
+  });
+
+
+  app.route('/api/surveys/postFeedback')
+    .post(function(req, res) {
+
+        console.log(req.body.feedbackMessage);
+        responseCheck.submitFeedback(req.body.responseID,req.body.feedbackMessage,function(result){
+        });
+
+        fluidApi.submitFeedback(req.body.responseID,req.body.feedbackMessage,function(result){});
+
   });
 
 };

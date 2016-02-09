@@ -23,6 +23,28 @@ exports.responseCheck = function(responseid,result){
 };*/
 
 
+exports.submitFeedback = function(responseid, message, result){
+
+    responseModel.findOne(responseid, function(err, response) {
+            if (err)
+                console.log(err);
+
+            if(response.feedbackComplete!=1){
+            response.responseid = responseid;
+            response.feedbackMessage = message;
+            response.feedbackComplete = 1;
+        }
+        
+                response.save(function(err) {
+                          if (err)
+                          output.send('NO-DATA');
+                        });
+
+                    result(response);
+              
+        });   
+};
+
 exports.responseCheck = function(responseid, result){
 
     responseModel.findOne(responseid, function(err, response) {
