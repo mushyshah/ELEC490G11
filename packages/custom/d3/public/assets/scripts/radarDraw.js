@@ -53,10 +53,10 @@ function radarDraw(scope, element) {
         if (d.group === record.group) { // push record data into right group in data
           d.axes.push({
             axis: record.axis,
-            value: parseInt(record.value),
+            value: record.value,
             description: record.description
           });
-          console.log("\nVALUE!!: "+parseInt(record.value));
+          console.log("\nVALUE!!: "+record.value);
         }
       });
     });
