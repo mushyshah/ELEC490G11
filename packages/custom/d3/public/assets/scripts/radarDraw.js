@@ -32,6 +32,8 @@ function radarDraw(scope, element) {
             'Survey Score,Confident,'+csv.SESS+', \n'+
             'Survey Score,Makes Connections,'+csv.TRSS+', '
             ;
+
+    console.log("DATA AT RADARCHART"+x);
     var json = d3.csv.parse(x); // parse csv string into json
     // reshape json data
     var data = [];
