@@ -102,7 +102,9 @@ exports.responseCompleted = function(responseid, output){
               //output(parsed);
               console.log("\n\nGET RESPONSE:\n"+ parsed + "\n\n");
 
-                    responseModel.findOne(responseid, function(err, result) {
+                    responseModel.findOne({'responseid' : responseid}, function(err, result) {
+
+                      console.log("RESULT OF FETCH: %j",result);
                     // if (err)
                     //     res.send(err);
 
