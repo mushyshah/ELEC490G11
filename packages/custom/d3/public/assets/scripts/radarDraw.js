@@ -59,7 +59,7 @@ function radarDraw(scope, element) {
         }
       });
     });
-    console.log("DATA AT RADARCHART %j",data);
+    console.log("DATA AT RADARCHAR"+data);
     return data;
   }
 }
