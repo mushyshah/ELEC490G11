@@ -25,7 +25,7 @@ exports.responseCheck = function(responseid,result){
 
 exports.submitFeedback = function(responseid, message, result){
 
-    responseModel.findOne(responseid, function(err, response) {
+    responseModel.findOne({responseid : responseid}, function(err, response) {
             if (err)
                 console.log(err);
 
@@ -47,7 +47,7 @@ exports.submitFeedback = function(responseid, message, result){
 
 exports.responseCheck = function(responseid, result){
 
-    responseModel.findOne(responseid, function(err, response) {
+    responseModel.findOne({responseid : responseid}, function(err, response) {
             if (err)
                 console.log(err);
 
