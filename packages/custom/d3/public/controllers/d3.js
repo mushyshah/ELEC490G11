@@ -63,6 +63,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
                     };
 
         $('#feedbackBox').hide();
+        $('#feedbackSubmitted').show();
+
 
         $http.post("/api/surveys/postFeedback", data).success(function(data, status) {
             console.log("Feedback Posted");
