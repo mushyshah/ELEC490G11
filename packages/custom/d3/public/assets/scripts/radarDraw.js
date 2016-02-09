@@ -33,8 +33,10 @@ function radarDraw(scope, element) {
             'Survey Score,Makes Connections,'+csv.TRSS+', '
             ;
 
-    console.log("DATA AT RADARCHART"+x);
+
     var json = d3.csv.parse(x); // parse csv string into json
+
+    console.log("DATA AT RADARCHART"+json);
     // reshape json data
     var data = [];
     var groups = []; // track unique groups
