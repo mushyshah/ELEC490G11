@@ -125,6 +125,11 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
       // $http.get('/api/surveys/gaugeData/56433548/').success(function(data) {
      //        console.log(data);
+
+     if(c.feedbackComplete == 0)
+        $('#feedbackBox').show();
+    else if(c.feedbackComplete == 1)
+        $('#alreadySubmitted').show();
           
       // // just pump in random data here...
       powerGauge1.update(c.OSS); //<-------------------------------------gauge values

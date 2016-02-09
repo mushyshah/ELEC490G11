@@ -47,16 +47,16 @@ exports.submitFeedback = function(responseid, message, result){
 
 exports.responseCheck = function(responseid, result){
 
-    responseModel.findOne({responseid : responseid}, function(err, response) {
+    console.log("responseID at script:"+responseid);
+
+    responseModel.findOne({'responseid' : responseid}, function(err, response) {
             if (err)
                 console.log(err);
-
-                response.save(function(err) {
-                          if (err)
-                          output.send('NO-DATA');
-                        });
-
-                    result(response);
-              
+            else if (response == null)
+                console.log('NO-DATA');
+            else{
+                response.save(function(err){});
+                result(response);
+              }
         });   
 };
