@@ -36,7 +36,7 @@ function radarDraw(scope, element) {
 
     var json = d3.csv.parse(x); // parse csv string into json
 
-    console.log("DATA AT RADARCHART %j",json);
+
     // reshape json data
     var data = [];
     var groups = []; // track unique groups
@@ -59,6 +59,7 @@ function radarDraw(scope, element) {
         }
       });
     });
+    console.log("DATA AT RADARCHART %j",data);
     return data;
   }
 }
