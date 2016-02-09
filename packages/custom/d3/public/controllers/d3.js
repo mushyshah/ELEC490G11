@@ -143,11 +143,11 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       powerGauge4.update(c.SESS);
       powerGauge5.update(c.TRSS);
 
-      $scope.OSS = c.OSS;
-      $scope.OMSS = c.OMSS;
-      $scope.LBSS = c.LBSS;
-      $scope.SESS = c.SESS;
-      $scope.TRSS = c.TRSS;
+      $scope.OSS = Math.round(c.OSS * 100) / 100;
+      $scope.OMSS = Math.round(c.OMSS * 100) / 100;
+      $scope.LBSS = Math.round(c.LBSS * 100) / 100;
+      $scope.SESS = Math.round(c.SESS * 100) / 100;
+      $scope.TRSS = Math.round(c.TRSS * 100) / 100;
 
       
       if($scope.OSS>3 && $scope.OSS<=4)
