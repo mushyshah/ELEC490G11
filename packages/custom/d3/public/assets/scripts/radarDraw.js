@@ -56,10 +56,11 @@ function radarDraw(scope, element) {
             value: parseInt(record.value),
             description: record.description
           });
+          console.log("\nVALUE!!: "+parseInt(record.value));
         }
       });
     });
-    console.log("DATA AT RADARCHAR"+data);
+    
     return data;
   }
 }
