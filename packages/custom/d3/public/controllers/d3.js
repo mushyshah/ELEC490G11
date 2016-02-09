@@ -121,12 +121,58 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       powerGauge4.update(c.SESS);
       powerGauge5.update(c.TRSS);
 
-      // powerGauge1.update(c); //<-------------------------------------gauge values
-      // powerGauge2.update(c);
-      // powerGauge3.update(c);
-      // powerGauge4.update(c);
-      // powerGauge5.update(c);
-      // });
+      $scope.OSS = c.OSS;
+      $scope.OMSS = c.OMSS;
+      $scope.LBSS = c.LBSS;
+      $scope.SESS = c.SESS;
+      $scope.TRSS = c.TRSS;
+
+      
+      if($scope.OSS>3 && $scope.OSS<=4)
+            $('#OSS4').show();
+      else if($scope.OSS>2 && $scope.OSS<=3)
+            $('#OSS3').show();
+      else if($scope.OSS>1 && $scope.OSS<=2)
+            $('#OSS2').show();
+      else if($scope.OSS>=0 && $scope.OSS<=1)
+            $('#OSS1').show();
+
+      if($scope.OMSS>3 && $scope.OMSS<=4)
+            $('#OMSS4').show();
+      else if($scope.OMSS>2 && $scope.OMSS<=3)
+            $('#OMSS3').show();
+      else if($scope.OMSS>1 && $scope.OMSS<=2)
+            $('#OMSS2').show();
+      else if($scope.OMSS>=0 && $scope.OMSS<=1)
+            $('#OMSS1').show();
+
+      if($scope.LBSS>3 && $scope.LBSS<=4)
+            $('#LBSS4').show();
+      else if($scope.LBSS>2 && $scope.LBSS<=3)
+            $('#LBSS3').show();
+      else if($scope.LBSS>1 && $scope.LBSS<=2)
+            $('#LBSS2').show();
+      else if($scope.LBSS>=0 && $scope.LBSS<=1)
+            $('#LBSS1').show();
+
+      if($scope.SESS>3 && $scope.SESS<=4)
+            $('#SESS4').show();
+      else if($scope.SESS>2 && $scope.SESS<=3)
+            $('#SESS3').show();
+      else if($scope.SESS>1 && $scope.SESS<=2)
+            $('#SESS2').show();
+      else if($scope.SESS>=0 && $scope.SESS<=1)
+            $('#SESS1').show();
+
+      if($scope.TRSS>3 && $scope.TRSS<=4)
+            $('#TRSS4').show();
+      else if($scope.TRSS>2 && $scope.TRSS<=3)
+            $('#TRSS3').show();
+      else if($scope.TRSS>1 && $scope.TRSS<=2)
+            $('#TRSS2').show();
+      else if($scope.TRSS>=0 && $scope.TRSS<=1)
+            $('#TRSS1').show();
+
     }
             
     powerGauge1.render();

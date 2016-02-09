@@ -21,16 +21,16 @@ function radarDraw(scope, element) {
   function csv2json(csv) {
     //csv = csv.replace(/, /g, ","); // trim leading whitespace in csv file
     var x = 'group,axis,value,description\n'+
-            'Rubric,Learns Independently,'+csv.OR+', \n'+
-            'Rubric,Self Motivated,'+csv.OMR+', \n'+
-            'Rubric,Flexible Learner,'+csv.LBR+', \n'+
-            'Rubric,Confident,'+csv.SER+', \n'+
-            'Rubric,Makes Connections,'+csv.TRR+', \n'+
-            'Your Score,Learns Independently,'+csv.OSS+', \n'+
-            'Your Score,Self Motivated,'+csv.OMSS+', \n'+
-            'Your Score,Flexible Learner,'+csv.LBSS+', \n'+
-            'Your Score,Confident,'+csv.SESS+', \n'+
-            'Your Score,Makes Connections,'+csv.TRSS+', '
+            'Self-Assessed,Learns Independently,'+csv.OR+', \n'+
+            'Self-Assessed,Self Motivated,'+csv.OMR+', \n'+
+            'Self-Assessed,Flexible Learner,'+csv.LBR+', \n'+
+            'Self-Assessed,Confident,'+csv.SER+', \n'+
+            'Self-Assessed,Makes Connections,'+csv.TRR+', \n'+
+            'Survey Score,Learns Independently,'+csv.OSS+', \n'+
+            'Survey Score,Self Motivated,'+csv.OMSS+', \n'+
+            'Survey Score,Flexible Learner,'+csv.LBSS+', \n'+
+            'Survey Score,Confident,'+csv.SESS+', \n'+
+            'Survey Score,Makes Connections,'+csv.TRSS+', '
             ;
     var json = d3.csv.parse(x); // parse csv string into json
     // reshape json data

@@ -118,8 +118,8 @@
 	<br>
 	<p>Further down on the page you will find a description of your results in each category, and what they reveal about your approach to learning. Finally, at the bottom of the page, is a section where you can comment on your results.</p>
 	</div>
-	<div style = "text-align:center;">
-		<div class="container" ng-controller="D3Controller as radar"> <!-- changed body to div -->
+		<section class="container" ng-controller="D3Controller as radar"> <!-- changed body to div -->
+				<div style = "text-align:center;">
 			<!-- main content -->
 			<div class="main container">
 				<!-- visualization -->
@@ -128,9 +128,7 @@
 						<radar csv="radar.csv" config="radar.config"></radar>
 					</div>
 				</div>
-			
 			</div>
-		</div>
 	</div>
 	<div id = "nav" style = "width: 190px">
 	<p><b>More Details</b></p>
@@ -156,7 +154,10 @@
 <div  style = "margin-top:-50px">
 <b> Learns Independently</b>
 <br>
-<p>Etiam non quam mi. Donec dapibus, tortor eget sagittis semper, orci purus finibus erat, eget aliquam nunc eros in dui. Maecenas tincidunt efficitur est vitae cursus. Fusce molestie vehicula lorem sed scelerisque. Phasellus tempor, lectus eget tristique dignissim, lacus lectus convallis metus, pulvinar sodales nulla purus nec nulla.</p>
+<div hidden id="OSS4">You apply organizational techniques in an adaptive, systematic manner, and actively maintain work schedules.</div>
+<div hidden id="OSS3">You apply organizational techniques systematically and maintain schedules for the majority of your work.</div>
+<div hidden id="OSS2">You organize your work process, and attempt to structure study schedules.</div>
+<div hidden id="OSS1">You apply organizational skills in an ad-hoc manner.</div>
 </div>
 </td>
 </tr>
@@ -172,7 +173,10 @@
 <td>
 <b>Self-Motivation</b>
 <br>
-<p>Sed elementum eros id nisl aliquet, pharetra consectetur nulla vehicula. Nunc quis sagittis orci. Mauris convallis, mi nec tincidunt pretium, odio magna condimentum urna, id placerat augue felis vel tortor. Nulla tincidunt semper leo, a tincidunt sem euismod tempor.</p>
+<div hidden id="OMSS4">Your intense interest leads you to apply a range of strategies to pursue topics in depth; grades are a secondary concern for you. You would be described as intrinsically motivated. </div>
+<div hidden id="OMSS3">You usually explore topics in depth, and utilize what you already know to pose questions that help you learn. </div>
+<div hidden id="OMSS2">You explore topics, and try to connect ideas, but it is you desire for grades, and/or not wanting others down that motivates you. </div>
+<div hidden id="OMSS1">You tend to be motivated by grades and/or not wanting to let others down. This is called a surface level engagement. </div>
 </td>
 </tr>
 <br>
@@ -187,7 +191,10 @@
 <td>
 <b>Flexible Learner</b>
 <br>
-<p>Fusce molestie est magna, ut elementum turpis gravida vitae. Donec tincidunt, massa vel imperdiet tempus, nisl metus egestas arcu, suscipit tempus dui neque ut nulla. Aliquam pharetra vitae ante eu semper. Nunc efficitur aliquet libero. Sed in erat diam.</p>
+<div hidden id="LBSS4">You believe in mastery of your own learning, with full control over time and effort distribution, study techniques. </div>
+<div hidden id="LBSS3">You feel that with enough time, effort, and the appropriate study techniques you can be successful. </div>
+<div hidden id="LBSS2">You feel like you can control some factors that lead to success or failure, like effort, technique, time, or study setting. </div>
+<div hidden id="LBSS1">At the moment, you feel like success or failure is primarily the result of factors you cannot control. </div>
 </td>
 </tr>
 <br>
@@ -201,7 +208,10 @@
 			</td>
 			<td>
 			<b>Confidence</b>
-			<p>Vestibulum vel congue nulla, quis cursus urna. Proin blandit feugiat turpis, scelerisque elementum orci ultricies quis. Mauris gravida pretium magna, ac pharetra tortor faucibus nec. Cras blandit velit viverra auctor mollis. Aliquam erat volutpat. Fusce mattis mattis nisi ac malesuada.</p>
+<div hidden id="SESS4">You feel very confident in holding all of the necessary knowledge/ skills you need to excel in meeting all of the learning goals. </div>
+<div hidden id="SESS3">You are confident that you have the appropriate level of knowledge/ skills to meet the learning goals. </div>
+<div hidden id="SESS2">You have confidence that your your knowledge/ skills are adequate to meet most of the learning goals. </div>
+<div hidden id="SESS1">At the moment, you feel tentative about having the knowledge/ skills necessary to meet learning goals. </div>
 			<br>
 			</td>
 			</tr>
@@ -217,7 +227,10 @@
 			<td>
 			<b>Makes Connections</b>
 			<br>
-			<p>Etiam eleifend urna magna, molestie mattis urna volutpat eget. Nullam mi risus, laoreet ut consequat at, blandit quis velit. Sed vitae eros quam. Maecenas nec aliquet libero. Nullam sit amet fermentum nulla. Suspendisse potenti. Praesent non venenatis odio, nec auctor nisl. </p>
+<div hidden id="TRSS4">You make explicit references to previous learning and apply knowledge and skills in an innovative (new and creative) ways that demonstrate comprehension/ performance.</div>
+<div hidden id="TRSS3">You make references to previous learning, established through application of knowledge and skills, demonstrating comprehension/ performance.</div>
+<div hidden id="TRSS2">You make some references to previous learning and apply that knowledge/ those skills to demonstrate comprehension/ performance.</div>
+<div hidden id="TRSS1">You tend to memorize information; the way you apply knowledge/ skills doesn’t always demonstrate comprehension or performance.</div>
 			</td>
 			</tr>
 			</table>
@@ -264,7 +277,7 @@
 	Simper, N., Kaupp, J., Frank, B., & Scott, J. (2016). Development of the Transferable Learning Orientations tool: providing metacognitive opportunities and meaningful feedback for students and instructors. Assessment & Evaluation In Higher Education. Retrieved from http://www.tandfonline.com/eprint/vYJm8CYjrD4I7ThUwDrn/full <br>
 	Docs.fluidsurveys.com,. (2016). FluidSurveys APIs Docs. Retrieved January 2016, from http://docs.fluidsurveys.com/ <br>
 </div>
-
+</section>
 <!-- <div class="overlay-bg">
 </div>
 <div class="overlay-content popup1">
