@@ -172,7 +172,8 @@ var RadarChart = {
     function updateConfig() {
       // adjust config parameters
       config.maxValue = Math.max(config.maxValue, d3.max(data, function(d) {
-        return d3.max(d.axes, function(o) { return o.value; });
+        // return d3.max(d.axes, function(o) { return o.value; });
+        return 4;
       }));
       config.w *= config.levelScale;
       config.h *= config.levelScale;
@@ -318,10 +319,11 @@ var RadarChart = {
         .append("svg:text").classed("axis-labels", true)
         .text(function(d) { return d; })
         .attr("text-anchor", "middle")
-        .attr("x", function(d, i) { return config.w / 2 * (1 - 1.3 * Math.sin(i * config.radians / vis.totalAxes)); })
-        .attr("y", function(d, i) { return config.h / 2 * (1 - 1.1 * Math.cos(i * config.radians / vis.totalAxes)); })
+        .attr("x", function(d, i) { return config.w*1.02 / 2 * (1 - 1.3 * Math.sin(i * config.radians / vis.totalAxes)); })
+        .attr("y", function(d, i) { return config.h*1.02 / 2 * (1 - 1.1 * Math.cos(i * config.radians / vis.totalAxes)); })
         .attr("font-family", "sans-serif")
-        .attr("font-size", 11 * config.labelScale + "px");
+        .attr("fill","gray")
+        .attr("font-size", 14 * config.labelScale + "px");
     }
 
 
@@ -407,7 +409,7 @@ var RadarChart = {
         .attr("x", config.w - config.paddingX / 2 + (1.5 * config.legendBoxSize))
         .attr("y", function(d, i) { return i * 2 * config.legendBoxSize; })
         .attr("dy", 0.07 * config.legendBoxSize + "em")
-        .attr("font-size", 11 * config.labelScale + "px")
+        .attr("font-size", 14 * config.labelScale + "px")
         .attr("fill", "gray")
         .text(function(d) {
           return d.group;
@@ -418,8 +420,9 @@ var RadarChart = {
     // show tooltip of vertices
     function verticesTooltipShow(d) {
       vis.verticesTooltip.style("opacity", 0.9)
-        .html("<strong>Value</strong>: " + d.value + "<br />" +
-          "<strong>Description</strong>: " + d.description + "<br />")
+        .html("<strong>Value</strong>: " + d.value )
+          // + "<br />" +
+          // "<strong>Description</strong>: " + d.description + "<br />")
         .style("left", (d3.event.pageX) + "px")
         .style("top", (d3.event.pageY) + "px");
     }
