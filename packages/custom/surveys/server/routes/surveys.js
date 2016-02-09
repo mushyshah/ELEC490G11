@@ -83,7 +83,7 @@ app.route('/api/surveys/gaugeData/:responseid')
     app.route('/api/surveys/isResponseComplete/:responseid')
     .get(function(req, res) {
       console.log('\n\n Checking response for: %d',req.params.responseid) + '\n';
-      responseCheck.responseCheck({responseid:req.params.responseid}, function(response) {
+      responseCheck.responseCheck(req.params.responseid, function(response) {
             //if (err)
                 //res.send(err);
             //res.json(response);
