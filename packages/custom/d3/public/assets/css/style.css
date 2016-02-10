@@ -8,15 +8,6 @@ body {
 html {
   overflow-y: scroll;
 }
-table {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
-}
 h1 {
   color: steelblue;
   font-weight: 800;
