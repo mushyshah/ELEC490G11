@@ -277,7 +277,7 @@ var RadarChart = {
           .attr("x2", function(d, i) { return levelFactor * (1 - Math.sin((i + 1) * config.radians / vis.totalAxes)); })
           .attr("y2", function(d, i) { return levelFactor * (1 - Math.cos((i + 1) * config.radians / vis.totalAxes)); })
           .attr("transform", "translate(" + (config.w / 2 - levelFactor) + ", " + (config.h / 2 - levelFactor) + ")")
-          .attr("stroke", "gray")
+          .attr("stroke", "#1a1a1a")
           .attr("stroke-width", "0.5px");
       }
     }
@@ -296,7 +296,7 @@ var RadarChart = {
           .attr("x", function(d) { return levelFactor * (1 - Math.sin(0)); })
           .attr("y", function(d) { return levelFactor * (1 - Math.cos(0)); })
           .attr("transform", "translate(" + (config.w / 2 - levelFactor + 5) + ", " + (config.h / 2 - levelFactor) + ")")
-          .attr("fill", "gray")
+          .attr("fill", "#1a1a1a")
           .attr("font-family", "sans-serif")
           .attr("font-size", 10 * config.labelScale + "px");
       }
@@ -327,7 +327,7 @@ var RadarChart = {
         .attr("x", function(d, i) { return config.w*1.02 / 2 * (1 - 1.3 * Math.sin(i * config.radians / vis.totalAxes)); })
         .attr("y", function(d, i) { return config.h*1.02 / 2 * (1 - 1.1 * Math.cos(i * config.radians / vis.totalAxes)); })
         .attr("font-family", "sans-serif")
-        .attr("fill","gray")
+        .attr("fill","#1a1a1a")
         .attr("font-size", 14 * config.labelScale + "px");
     }
 
@@ -415,7 +415,7 @@ var RadarChart = {
         .attr("y", function(d, i) { return i * 2 * config.legendBoxSize; })
         .attr("dy", 0.07 * config.legendBoxSize + "em")
         .attr("font-size", 14 * config.labelScale + "px")
-        .attr("fill", "gray")
+        .attr("fill", "#1a1a1a")
         .text(function(d) {
           return d.group;
         });
