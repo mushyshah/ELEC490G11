@@ -86,8 +86,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 /*********************************************************************************************/
 
     var powerGauge1 = gauge1('#power-gauge1', {
-      size: 150,
-      clipWidth: 155,
+      size: 200,
+      clipWidth: 150,
       clipHeight: 100,
       ringWidth: 30,
       maxValue: 4,
