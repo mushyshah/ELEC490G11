@@ -8,8 +8,8 @@
 
   <title>{{appName}} - {{title}}</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-  <meta name="keywords" content="node.js, express, mongoose, mongodb, angularjs, swig">
-  <meta name="description" content="MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).">
+  
+  <meta name="description" content="Transferrable Learning Orientations Survey">
 
   <meta property="fb:app_id" content="APP_ID">
   <meta property="og:title" content="{{appName}} - {{title}}">
@@ -22,21 +22,6 @@
 
   <link rel="manifest" href="/system/assets/static/manifest.json">
   
-  <!-- {{locals.config.cssFramework}} -->
-  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
-
-  {% for file in aggregatedassets.header.css %}
-    <link rel="stylesheet" href="{{file}}">
-  {% endfor %}
-
-  {% for file in aggregatedassets.footer.css %}
-    <link rel="stylesheet" href="{{file}}">
-  {% endfor %}
-
-  {% for file in aggregatedassets.header.js %}
-    <script type="text/javascript" src="{{file}}"></script>
-  {% endfor %}
-
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
