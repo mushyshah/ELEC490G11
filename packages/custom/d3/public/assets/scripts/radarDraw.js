@@ -278,7 +278,7 @@ var RadarChart = {
           .attr("y2", function(d, i) { return levelFactor * (1 - Math.cos((i + 1) * config.radians / vis.totalAxes)); })
           .attr("transform", "translate(" + (config.w / 2 - levelFactor) + ", " + (config.h / 2 - levelFactor) + ")")
           .attr("stroke", "#1a1a1a")
-          .attr("stroke-width", "0.5px");
+          .attr("stroke-width", "0.8px");
       }
     }
 
