@@ -15,7 +15,6 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     function init() {
     $scope.feedbackMessage = "";
     $scope.responseID = $stateParams.responseID;
-    //$location.url('/d3/example/');
     console.log("D3 CONTROLLER RESPONSE ID: " + $scope.responseID); 
     $scope.random = 5;
 
@@ -48,6 +47,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
         showVertices: true,
         showPolygons: true
       };
+
+      $location.url('/d3/example/');
     }
 
 
