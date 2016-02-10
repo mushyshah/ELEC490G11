@@ -33,8 +33,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       // initialize controller functions
       ctrl.selectExample(ctrl.exampleSelected);
       ctrl.config = {
-        w: 320,
-        h: 320,
+        w: 300,
+        h: 300,
         facet: false,
         levels: 4,
         levelScale: 0.85,
