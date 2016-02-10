@@ -625,7 +625,7 @@
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
-			arcColorFn					: d3.interpolateHsl(d3.rgb('#ffccff'), d3.rgb('#660066'))
+			arcColorFn					: d3.interpolateHsl(d3.rgb('#D6C5E9'), d3.rgb('#7E4CB6'))
 		};
 		var range = undefined;
 		var r = undefined;
