@@ -2,7 +2,6 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color:#FFFFFF;
   padding-top: 10px;
   padding-bottom: 100px;
 }
@@ -13,6 +12,9 @@ h1 {
   color: steelblue;
   font-weight: 800;
   font-size: 1.7em;
+}
+p {
+  color: #FFFFFF;
 }
 h2 {
   color: steelblue;
