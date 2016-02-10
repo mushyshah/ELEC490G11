@@ -3,8 +3,8 @@
 	var gauge1 = function(container, configuration) {
 		var that = {};
 		var config = {
-			size						: 230,
-			clipWidth					: 230,
+			size						: 400,
+			clipWidth					: 400,
 			clipHeight					: 110,
 			ringInset					: 20,
 			ringWidth					: 20,
@@ -153,8 +153,8 @@
 	var gauge2 = function(container, configuration) {
 		var that = {};
 		var config = {
-			size						: 230,
-			clipWidth					: 230,
+			size						: 400,
+			clipWidth					: 400,
 			clipHeight					: 110,
 			ringInset					: 20,
 			ringWidth					: 20,
@@ -303,8 +303,8 @@
 	var gauge3 = function(container, configuration) {
 		var that = {};
 		var config = {
-			size						: 230,
-			clipWidth					: 230,
+			size						: 400,
+			clipWidth					: 400,
 			clipHeight					: 110,
 			ringInset					: 20,
 			ringWidth					: 20,
@@ -453,8 +453,8 @@
 	var gauge4 = function(container, configuration) {
 		var that = {};
 		var config = {
-			size						: 230,
-			clipWidth					: 230,
+			size						: 400,
+			clipWidth					: 400,
 			clipHeight					: 110,
 			ringInset					: 20,
 			ringWidth					: 20,
@@ -603,8 +603,8 @@
 	var gauge5 = function(container, configuration) {
 		var that = {};
 		var config = {
-			size						: 230,
-			clipWidth					: 230,
+			size						: 400,
+			clipWidth					: 400,
 			clipHeight					: 110,
 			ringInset					: 20,
 			ringWidth					: 20,
