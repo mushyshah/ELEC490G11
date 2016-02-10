@@ -90,7 +90,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       size: 200,
       clipWidth: 200,
       clipHeight: 100,
-      ringWidth: 30,
+      ringWidth: 40,
       maxValue: 4,
       transitionMs: 3000,
     });
@@ -98,7 +98,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       size: 200,
       clipWidth: 200,
       clipHeight: 100,
-      ringWidth: 30,
+      ringWidth: 40,
       maxValue: 4,
       transitionMs: 3000,
     });
@@ -106,7 +106,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       size: 200,
       clipWidth: 200,
       clipHeight: 100,
-      ringWidth: 30,
+      ringWidth: 40,
       maxValue: 4,
       transitionMs: 3000,
     });
@@ -114,7 +114,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       size: 200,
       clipWidth: 200,
       clipHeight: 100,
-      ringWidth: 30,
+      ringWidth: 40,
       maxValue: 4,
       transitionMs: 3000,
     });
@@ -122,7 +122,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       size: 200,
       clipWidth: 200,
       clipHeight: 100,
-      ringWidth: 30,
+      ringWidth: 40,
       maxValue: 4,
       transitionMs: 3000,
     });
