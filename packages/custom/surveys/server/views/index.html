@@ -1,13 +1,10 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
 
-<section data-ng-controller="SurveysController" data-ng-init="init()">
-  
-  <div ng-show="!evaluate(completed)">
-  <iframe ng-src="{{trustSrc(fluidResponse)}}" frameborder="0" style="border: none; height:100%; width:100%; height:2500px;"></iframe>
-  </div>
-
-
-</section>
+  <section data-ui-view ></section>
+  <script type="text/javascript">
+    window.user = {{user|json|safe}};
+    window.modules = null;
+  </script>
 
 {% endblock %}
