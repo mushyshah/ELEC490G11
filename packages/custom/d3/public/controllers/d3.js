@@ -48,7 +48,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
         showPolygons: true
       };
 
-      $location.url('/d3/example/');
+      //$location.url('/d3/example/');
     }
 
 
