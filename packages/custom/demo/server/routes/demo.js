@@ -11,7 +11,6 @@ module.exports = function(Demo, app, auth, database) {
 
   app.route('/api/demo/newResponse')
     .get(function(req, res) {
-      animationModel.init();
       animationModel.fluiddn();
       fluidApi.newResponse(function(result){
         console.log('\n\nOUTPUT AT ROUTER: %j',result) + '\n';
@@ -34,6 +33,7 @@ module.exports = function(Demo, app, auth, database) {
     .get(function(req, res) {
 
       console.log('requesting state');
+      animationModel.init();
         animationModel.stateCheck(function(result){
         res.json(result);
       });
