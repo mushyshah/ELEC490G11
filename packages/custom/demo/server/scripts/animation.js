@@ -49,6 +49,8 @@ exports.resetState = function(){
                 response.fluidup = false;
                 response.fluiddn = false;
 
+                response.save(function(err){});
+
         });   
 };
 
