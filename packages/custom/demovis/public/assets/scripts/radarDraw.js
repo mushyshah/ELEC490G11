@@ -23,12 +23,12 @@ function radarDraw(scope, element) {
     console.log("data at d3: "+csv);
     var x = 'group,axis,value,description\n'+
             'Your Score,The Jungle Book,'+csv.JB+', \n'+
-            'Your Score,Batman vs Superman,'+csv.BS+', \n'+
+            'Your Score,BatmanvSuperman,'+csv.BS+', \n'+
             'Your Score,Suicide Squad,'+csv.SS+', \n'+
             'Your Score,Finding Dory,'+csv.FD+', \n'+
             'Your Score,Zoolander 2,'+csv.ZL+', \n'+
             'Everyone Else,The Jungle Book,'+csv.JBR+', \n'+
-            'Everyone Else,Batman vs Superman,'+csv.BSR+', \n'+
+            'Everyone Else,BatmanvSuperman,'+csv.BSR+', \n'+
             'Everyone Else,Suicide Squad,'+csv.SSR+', \n'+
             'Everyone Else,Finding Dory,'+csv.FDR+', \n'+
             'Everyone Else,Zoolander 2,'+csv.ZLR+', '
