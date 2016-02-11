@@ -20,6 +20,7 @@ function radarDraw(scope, element) {
   // helper function csv2json to return json data from csv
   function csv2json(csv) {
     //csv = csv.replace(/, /g, ","); // trim leading whitespace in csv file
+    console.log("data at d3: "+csv);
     var x = 'group,axis,value,description\n'+
             'Everyone Else,The Jungle Book,'+csv.JB+', \n'+
             'Everyone Else,Batman vs Superman,'+csv.BS+', \n'+
