@@ -33,9 +33,9 @@ module.exports = function(Demo, app, auth, database) {
     .get(function(req, res) {
 
       console.log('requesting state');
-      animationModel.init();
         animationModel.stateCheck(function(result){
         res.json(result);
+        console.log("OUTOUT: "+result);
       });
   });
 

@@ -29,23 +29,23 @@ exports.stateCheck = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
 
-                var send = response;
+                // var send = response;
 
-                response.serverup = false;
-                response.serverdn = false;
+                // response.serverup = false;
+                // response.serverdn = false;
 
-                response.d3up = false;
-                response.d3dn = false;
+                // response.d3up = false;
+                // response.d3dn = false;
                   
-                response.mongoup = false;
-                response.mongodn = false;
+                // response.mongoup = false;
+                // response.mongodn = false;
                   
-                response.fluidup = false;
-                response.fluiddn = false;
+                // response.fluidup = false;
+                // response.fluiddn = false;
 
-                response.save(function(err){});
+                // response.save(function(err){});
 
-                result(send);
+                result(response);
 
         });   
 };
