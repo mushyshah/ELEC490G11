@@ -100,7 +100,7 @@ exports.responseCompleted = function(responseid, output){
               // Data reception is done, do whatever with it!
               var parsed = JSON.parse(body);
               //output(parsed);
-              console.log("\n\nGET RESPONSE:\n"+ parsed + "\n\n");
+              console.log("\n\nGET RESPONSE: %j", parsed + "\n\n");
 
                     responseModel.findOne({'responseid' : responseid}, function(err, result) {
 
