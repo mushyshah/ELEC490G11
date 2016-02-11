@@ -59,6 +59,8 @@ module.exports = function(Demo, app, auth, database) {
 
     app.route('/api/demo/isResponseComplete/:responseid')
     .get(function(req, res) {
+
+      animationModel.serverdn();
       console.log('\n\n Checking response for: %d',req.params.responseid) + '\n';
       responseCheck.responseCheck(req.params.responseid, function(response) {
             //if (err)
