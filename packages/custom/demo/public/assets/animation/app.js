@@ -1,5 +1,6 @@
 // create our module and inject ngAnimate into it
-angular.module('animateApp',['ngAnimate']).controller('mainController',['$scope','$timeout',function($scope,$timeout) {
+angular.module('animateApp',['ngAnimate']).controller('mainController',['$scope','$timeout', '$http',
+  function($scope,$timeout,$http) {
   
   // set the default states for lions and cranes
   $scope.serverup = false;
@@ -14,66 +15,92 @@ angular.module('animateApp',['ngAnimate']).controller('mainController',['$scope'
   $scope.fluidup = false;
   $scope.fluiddn = false;
 
+ 
+
+$scope.check = function() {
+
+              console.log('IS IT COMPLETED? %d',data.completed);
+              
+  $http.get('/api/demo/state').success(function (data) {
+
+              $scope.serverup = data.serverup;
+              $scope.serverdn = data.serverdn;
+
+              $scope.d3up = data.d3up;
+              $scope.d3dn = data.d3dn;
+              
+              $scope.mongoup = data.mongoup;
+              $scope.mongodn = data.mongodn;
+              
+              $scope.fluidup = data.fluidup;
+              $scope.fluiddn = data.fluiddn;
+            
+            $timeout(function(){$scope.tick()}, 1000);
+        });
+
+}
+
+ $scope.check();
 
 $scope.tick = function() {
 
         if($scope.serverup==true)
-            $timeout(function(){$scope.serverup=false;}, 1000);
+            $scope.serverup=false;
 
         if($scope.serverdn==true)
-            $timeout(function(){$scope.serverdn=false;}, 1000);
+            $scope.serverdn=false;
 
         if($scope.d3up==true)
-            $timeout(function(){$scope.d3up=false;}, 1000);
+            $scope.d3up=false;
 
         if($scope.d3dn==true)
-            $timeout(function(){$scope.d3dn=false;}, 1000);
+            $scope.d3dn=false;
 
         if($scope.mongoup==true)
-            $timeout(function(){$scope.mongoup=false;}, 1000);
+            $scope.mongoup=false;
 
         if($scope.mongodn==true)
-            $timeout(function(){$scope.mongodn=false;}, 1000);
+            $scope.mongodn=false;
 
         if($scope.fluidup==true)
-            $timeout(function(){$scope.fluidup=false;}, 1000);
+            $scope.fluidup=false;
 
         if($scope.fluiddn==true)
-            $timeout(function(){$scope.fluiddn=false;}, 1000);
+            $scope.fluiddn=false;
 
   };
 
-$scope.$watch('serverup',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('serverup',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('serverdn',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('serverdn',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('d3up',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('d3up',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('d3dn',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('d3dn',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('mongoup',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('mongoup',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('mongodn',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('mongodn',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('fluidup',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('fluidup',
+//               function() {$scope.tick();}
+//       );
 
-$scope.$watch('fluiddn',
-              function() {$scope.tick();}
-      );
+// $scope.$watch('fluiddn',
+//               function() {$scope.tick();}
+//       );
 
 
 
