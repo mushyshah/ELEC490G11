@@ -67,6 +67,8 @@ module.exports = function(Demo, app, auth, database) {
                 //res.send(err);
             //res.json(response);
              console.log('\n\nResponse Complete: %j',response) + '\n';
+             if(response.completed==1)
+              animationModel.serverup();
             res.send(response);
         });
 
@@ -75,6 +77,7 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/responseComplete')
     .post(function(req, res) {
 
+        animationModel.fluidup();
         console.log("RESPONSE COMPLETED = "+req.body._id);
         fluidApi.responseCompleted(req.body._id,function(result){});
 
