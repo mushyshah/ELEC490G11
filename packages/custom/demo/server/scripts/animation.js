@@ -4,10 +4,6 @@ var animationModel = require('../models/animation');
 
 exports.init = function(){
 
-    animationModel.findOne({'usage' : 'state'}, function(err, response) {
-
-            console.log("\n\nINITININTINITNIT\n\n");
-            if(response==null){
             response = new animationModel();
             response.usage = 'state';
             response.serverup = false;
@@ -26,11 +22,7 @@ exports.init = function(){
                           if (err)
                           output.send('NO-DATA');
                         });
-        }
         
-                
-              
-        });   
 };
 
 exports.stateCheck = function(result){
