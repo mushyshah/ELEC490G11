@@ -80,15 +80,6 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
         updateReadings(data);
         ctrl.csv = data;
 
-    var csv = ctrl.csv;
-    //console.log('\n\nHELLO ITS A ME\n\n');
-    var config = ctrl.config;
-    var data = csv2json(csv);
-    RadarChart.draw(element[0], data, config);
-
-
-
-
       });
       console.log("\n\n\nWHASSUPNO\n\n\n");
     }
