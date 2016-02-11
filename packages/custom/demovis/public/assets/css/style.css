@@ -69,11 +69,12 @@ pre {
 .checkbox {
   margin-left: 20px;
 }
-/* Customizable classes used in D3 vis, uncomment to customize
+ Customizable classes used in D3 vis, uncomment to customize
 .svg-vis {
-  background-color: gray;
-  opacity: 0.5;
+  width: 500px;
+  height: 450px;
 }
+/*
 .verticesTooltip {
   position: absolute;
   color: red;
