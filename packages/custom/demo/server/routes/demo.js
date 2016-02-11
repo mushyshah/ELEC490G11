@@ -106,8 +106,12 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/postFeedback')
     .post(function(req, res) {
 
-        // animationModel.serverdn();
-        // animationModel.fluiddn();
+        animationModel.serverdn(function(){
+
+                  animationModel.fluiddn(function(){});
+
+        });
+
 
         console.log(req.body.feedbackMessage);
         responseCheck.submitFeedback(req.body.responseID,req.body.feedbackMessage,function(result){
