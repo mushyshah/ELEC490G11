@@ -19,10 +19,12 @@ angular.module('animateApp',['ngAnimate']).controller('mainController',['$scope'
 
 $scope.check = function() {
 
-              console.log('IS IT COMPLETED?');
               
   $http.get('/api/demo/state').success(function (data) {
+              
+              if(data.fluiddn)
               console.log('YES');
+            
               $scope.serverup = data.serverup;
               $scope.serverdn = data.serverdn;
 
