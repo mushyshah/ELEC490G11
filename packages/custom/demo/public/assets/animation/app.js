@@ -71,7 +71,7 @@ $scope.tick = function() {
         if($scope.fluiddn==true)
             $scope.fluiddn=false;
 
-      $scope.check();
+      $timeout(function(){$scope.check()}, 1000);
 
   };
 
