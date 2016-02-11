@@ -24,7 +24,7 @@ $scope.check = function() {
               
               if(data.fluiddn)
               console.log('YES');
-            
+
               $scope.serverup = data.serverup;
               $scope.serverdn = data.serverdn;
 
@@ -41,7 +41,7 @@ $scope.check = function() {
             
         });
 
-  $timeout(function(){$scope.tick()}, 1000);
+  $timeout(function(){$scope.tick()}, 500);
 
 }
 
@@ -73,7 +73,7 @@ $scope.tick = function() {
         if($scope.fluiddn==true)
             $scope.fluiddn=false;
 
-        $timeout(function(){$scope.check()}, 1000);
+        $timeout(function(){$scope.check()}, 500);
 
   };
 
