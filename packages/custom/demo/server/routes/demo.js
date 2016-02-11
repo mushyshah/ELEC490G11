@@ -3,6 +3,7 @@
 var fluidApi = require('../scripts/fluidCalls');
 var responseCheck = require('../scripts/responseCheck');
 var responseModel = require('../models/response');
+var animationModel = require('../models/animation');
 
 /* jshint -W098 */
 // The Package is past automatically as first parameter
@@ -10,6 +11,8 @@ module.exports = function(Demo, app, auth, database) {
 
   app.route('/api/demo/newResponse')
     .get(function(req, res) {
+      animationModel.init();
+      animationModel.fluiddn();
       fluidApi.newResponse(function(result){
         console.log('\n\nOUTPUT AT ROUTER: %j',result) + '\n';
         res.json(result);
@@ -24,6 +27,15 @@ module.exports = function(Demo, app, auth, database) {
 
             //res.json({ message: 'Response created!' });
         });
+      });
+  });
+
+  app.route('/api/demo/state')
+    .get(function(req, res) {
+
+      console.log('requesting state');
+        animationModel.stateCheck(function(result){
+        res.json(result);
       });
   });
 
