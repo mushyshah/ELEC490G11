@@ -23,4 +23,4 @@ var DemoSchema = new Schema({
 	ZLR: Number,
 });
 
-module.exports = mongoose.model('Response', ResponseSchema);
+module.exports = mongoose.model('DemoResponse', DemoSchema);
