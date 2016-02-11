@@ -56,7 +56,7 @@ var options = { method: 'PUT',
   headers: 
    { 'cache-control': 'no-cache',
      authorization: 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'},
-  formData: { Qeoq28n2xy: message } };
+  formData: { qeoQ28N2xy: message } };
 
 request(options, function (error, response, body) {
   console.log(options.host + options.path + ':' + response.statusCode);
