@@ -3,7 +3,7 @@
 var fluidApi = require('../scripts/fluidCalls');
 var responseCheck = require('../scripts/responseCheck');
 var responseModel = require('../models/response');
-var animationModel = require('../models/animation');
+var animationModel = require('../scripts/animation');
 
 /* jshint -W098 */
 // The Package is past automatically as first parameter
