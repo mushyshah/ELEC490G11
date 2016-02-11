@@ -37,7 +37,7 @@ $scope.evaluate = function(value){
       return false;
     else
     {
-      $location.path('/demovis'+$scope.responseid);
+      $location.path('/demovis/'+$scope.responseid);
       return true;
     }
 }
