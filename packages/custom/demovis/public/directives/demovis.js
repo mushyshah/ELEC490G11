@@ -1,7 +1,7 @@
 'use strict';
 
 // directive function sunburst
-angular.module('mean.demovis').directive('radar', function() {
+angular.module('mean.d3').directive('radar', function() {
   // directive function sunburst
   console.log("\n\nWTF IS HAPPEINING DIRECTIVE\n\n");
     return {
@@ -16,7 +16,7 @@ angular.module('mean.demovis').directive('radar', function() {
 
 
 // directive function onReadFile
-angular.module('mean.demovis').directive('onReadFile', function() {
+angular.module('mean.d3').directive('onReadFile', function() {
     return {
       restrict: "A",
       scope: false,
