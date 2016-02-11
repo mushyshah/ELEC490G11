@@ -34,8 +34,6 @@ exports.init = function(){
 
 exports.stateCheck = function(result){
 
-    console.log("responseID at script:"+responseid);
-
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
 
                 var send = response;
