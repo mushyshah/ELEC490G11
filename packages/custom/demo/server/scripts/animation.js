@@ -4,7 +4,7 @@ var animationModel = require('../models/animation');
 
 exports.init = function(){
 
-            response = new animationModel();
+            var response = new animationModel();
             response.usage = 'state';
             response.serverup = false;
             response.serverdn = false;
