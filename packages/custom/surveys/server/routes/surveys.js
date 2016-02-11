@@ -4,7 +4,6 @@ var fluidApi = require('../scripts/fluidCalls');
 var responseCheck = require('../scripts/responseCheck');
 var responseModel = require('../models/response');
 
-
 /* jshint -W098 */
 // The Package is past automatically as first parameter
 module.exports = function(Surveys, app, auth, database) {

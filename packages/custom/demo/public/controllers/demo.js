@@ -1,9 +1,10 @@
 'use strict';
 
 /* jshint -W098 */
-angular.module('mean.surveys').controller('DemoController', ['$scope', 'Global', 'Surveys', 
-	'$http', '$sce', '$timeout', '$location',
-  function($scope, Global, Surveys, $http, $sce, $timeout, $location, $interval) {
+angular.module('mean.demo').controller('DemoController', ['$scope', 'Global', 'Demo',
+  '$http', '$sce', '$timeout', '$location', 
+  function($scope, Global, Demo, $http, $sce, $timeout, $location, $interval) {
+   
 
 var initializing = true;
 $scope.completed = 0;
@@ -11,7 +12,7 @@ $scope.completed = 0;
 $scope.init = function () {
     
 
-     $http.get('/api/surveys/newResponse')
+     $http.get('/api/demo/newResponse')
         .success(function(data) {
             $scope.fluidResponse = data.url;
             $scope.responseid = data._id;
@@ -40,26 +41,13 @@ $scope.evaluate = function(value){
       return true;
     }
 }
-   /*
-$scope.responseComplete = function (resid){
-    $http.get('/api/isResponseComplete/'+resid)
-        .success(function(data) {
-            $scope.completed = 1;
-            console.log("Response Completed");
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        })
-        return;
-}
-
-*/
+ 
  $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   }
 
 $scope.tick = function(resid) {
-        $http.get('/api/surveys/isResponseComplete/'+resid).success(function (data) {
+        $http.get('/api/demo/isResponseComplete/'+resid).success(function (data) {
             console.log('IS IT COMPLETED? %d',data.completed);
             $scope.completed = data.completed;
 
@@ -77,7 +65,7 @@ $scope.$watch('completed',
 
     $scope.global = Global;
     $scope.package = {
-      name: 'surveys'
+      name: 'demo'
     };
   }
 ]);

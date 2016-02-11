@@ -118,11 +118,12 @@ exports.responseCompleted = function(responseid, output){
                     result.FD = parsed['Oxyvy2mi50'] ;
                     result.ZL = parsed['Hc0f9b7myr'] ;
 
-                    result.JBR = 2.8;
-                    result.BSR = 3.8;
-                    result.SSR = 3.2;
-                    result.FDR = 1.9;
-                    result.ZLR = 0.5;
+                    result.JBR = 1.2 ;
+                    result.BSR = 3.2 ;
+                    result.SSR = 2.4 ;
+                    result.FDR = 3.8 ;
+                    result.ZLR = 0.7 ;
+
 
                           result.save(function(err) {
                           if (err)

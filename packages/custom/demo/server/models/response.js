@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var DemoSchema = new Schema({
+var DemoResponseSchema = new Schema({
 	responseid: Number,
 	completed: Number,
 	updated: Number,
@@ -21,6 +21,7 @@ var DemoSchema = new Schema({
 	SSR: Number,
 	FDR: Number,
 	ZLR: Number,
+	
 });
 
-module.exports = mongoose.model('DemoResponse', DemoSchema);
+module.exports = mongoose.model('DemoResponse', DemoResponseSchema);

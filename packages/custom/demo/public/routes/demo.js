@@ -1,13 +1,10 @@
 'use strict';
 
-angular.module('mean.surveys').config(['$stateProvider', '$viewPathProvider',
-  function($stateProvider, $viewPathProvider) {
-    $stateProvider.state('surveys example page', {
+angular.module('mean.demo').config(['$stateProvider',
+  function($stateProvider) {
+    $stateProvider.state('demo example page', {
       url: '/demo',
-      templateUrl: 'demo/views/index.html'
+      templateUrl: 'demo/views/index2.html'
     });
-
-    //$viewPathProvider.override('system/views/index.html', 'surveys/views/index.html');
-
   }
 ]);
