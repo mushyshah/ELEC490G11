@@ -146,66 +146,66 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
       powerGauge4.update(c.JB);
       powerGauge5.update(c.ZL);
 
-      $scope.JB = Math.round(c.JB * 100) / 100;
-      $scope.BS = Math.round(c.BS * 100) / 100;
-      $scope.SS = Math.round(c.SS * 100) / 100;
-      $scope.FD = Math.round(c.FD * 100) / 100;
-      $scope.ZL = Math.round(c.ZL * 100) / 100;
+      $scope.JB = c.JB;
+      $scope.BS = c.BS;
+      $scope.SS = c.SS;
+      $scope.FD = c.FD;
+      $scope.ZL = c.ZL;
 
       
-           if($scope.SS == 5)
+           if($scope.SS == 4)
             $('#SS5').show();
-      else if($scope.SS == 4)
-            $('#SS4').show();
       else if($scope.SS == 3)
-            $('#SS3').show();
+            $('#SS4').show();
       else if($scope.SS == 2)
-            $('#SS2').show();
+            $('#SS3').show();
       else if($scope.SS == 1)
+            $('#SS2').show();
+      else if($scope.SS == 0)
             $('#SS1').show();
 
-           if($scope.FD == 5)
+           if($scope.FD == 4)
             $('#FD5').show();
-      else if($scope.FD == 4)
-            $('#FD4').show();
       else if($scope.FD == 3)
-            $('#FD3').show();
+            $('#FD4').show();
       else if($scope.FD == 2)
-            $('#FD2').show();
+            $('#FD3').show();
       else if($scope.FD == 1)
+            $('#FD2').show();
+      else if($scope.FD == 0)
             $('#FD1').show();
            
-           if($scope.BS == 5)
+           if($scope.BS == 4)
             $('#BS5').show();
-      else if($scope.BS == 4)
-            $('#BS4').show();
       else if($scope.BS == 3)
-            $('#BS3').show();
+            $('#BS4').show();
       else if($scope.BS == 2)
-            $('#BS2').show();
+            $('#BS3').show();
       else if($scope.BS == 1)
+            $('#BS2').show();
+      else if($scope.BS == 0)
             $('#BS1').show();
 
-          if($scope.JB == 5)
+          if($scope.JB == 4)
             $('#JB5').show();
-      else if($scope.JB == 4)
+      else if($scope.JB ==3)
             $('#JB4').show();
-      else if($scope.JB == 3)
+      else if($scope.JB ==2)
             $('#JB3').show();
-      else if($scope.JB == 2)
-            $('#JB2').show();
       else if($scope.JB == 1)
+            $('#JB2').show();
+      else if($scope.JB == 0)
             $('#JB1').show();
 
-          if($scope.ZL == 5)
+          if($scope.ZL == 4)
             $('#ZL5').show();
-      else if($scope.ZL == 4)
-            $('#ZL4').show();
       else if($scope.ZL == 3)
-            $('#ZL3').show();
+            $('#ZL4').show();
       else if($scope.ZL == 2)
-            $('#ZL2').show();
+            $('#ZL3').show();
       else if($scope.ZL == 1)
+            $('#ZL2').show();
+      else if($scope.ZL == 0)
             $('#ZL1').show();
 
 
