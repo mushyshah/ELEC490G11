@@ -54,6 +54,13 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/findResponse/:responseid')
     .get(function(req, res) {
 
+      animationModel.d3up(function(){
+        animationModel.mongoup(function(){
+          animationModel.serverup(function(){});
+        });
+
+      });
+
       console.log('responseid = '+req.params.responseid);
         responseCheck.responseCheck(req.params.responseid,function(result){
         res.json(result);
