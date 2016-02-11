@@ -119,15 +119,17 @@
 	<p>Further down on the page you will find a description of your results in each category, and what they reveal about your approach to learning. Finally, at the bottom of the page, is a section where you can comment on your results.</p>
 	</div>
 		<section class="container" ng-controller="DemovisController as radar1"> <!-- changed body to div -->
+				<div style = "text-align:center;">
 			<!-- main content -->
 			<div class="main container">
 				<!-- visualization -->
 				<div class="visualization col-xs-7">
-					<div class="visualization" style="width:100%;">
+					<div class="visualization" >
 						<radar csv="radar1.csv" config="radar1.config"></radar>
 					</div>
 				</div>
 			</div>
+	</div>
 	<div id = "nav" style = "width: 190px">
 	<p><b>More Details</b></p>
 	</div>
