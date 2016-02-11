@@ -221,7 +221,7 @@ var RadarChart = {
       // create main vis svg
       vis.svg = d3.select(id)
         .append("svg").classed("svg-vis", true)
-        .attr("width", config.w + config.paddingX)
+        .attr("width", config.w + config.paddingX + 20)
         .attr("height", config.h + config.paddingY)
         .append("svg:g")
         .attr("transform", "translate(" + config.translateX + "," + config.translateY + ")");;
