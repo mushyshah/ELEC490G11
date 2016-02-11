@@ -92,7 +92,7 @@ var RadarChart = {
       polygonStrokeOpacity: 1,
       polygonPointSize: 4,
       legendBoxSize: 10,
-      translateX: w / 4,
+      translateX: (w / 4)+15 ,
       translateY: h / 4,
       paddingX: w,
       paddingY: h,
@@ -221,7 +221,7 @@ var RadarChart = {
       // create main vis svg
       vis.svg = d3.select(id)
         .append("svg").classed("svg-vis", true)
-        .attr("width", config.w + config.paddingX + 20)
+        .attr("width", config.w + config.paddingX)
         .attr("height", config.h + config.paddingY)
         .append("svg:g")
         .attr("transform", "translate(" + config.translateX + "," + config.translateY + ")");;
