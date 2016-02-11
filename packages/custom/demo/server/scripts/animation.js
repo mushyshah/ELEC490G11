@@ -5,9 +5,8 @@ var animationModel = require('../models/animation');
 exports.init = function(){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
-            if (err)
-                console.log(err);
 
+            console.log("\n\nINITININTINITNIT\n\n");
             if(response==null){
             response = new animationModel();
             response.usage = 'state';
@@ -22,12 +21,14 @@ exports.init = function(){
               
             response.fluidup = false;
             response.fluiddn = false;
-        }
-        
-                response.save(function(err) {
+
+            response.save(function(err) {
                           if (err)
                           output.send('NO-DATA');
                         });
+        }
+        
+                
               
         });   
 };
