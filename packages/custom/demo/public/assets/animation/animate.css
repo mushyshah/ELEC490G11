@@ -1,0 +1,36 @@
+/* when hiding the picture */
+.ng-hide-add         { animation:1s fadeOut ease; }
+
+/* when showing the picture */
+.ng-hide-remove      { animation:1s fadeIn ease; }
+
+/* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
+/* flip in */
+@keyframes fadeIn {
+  0% {
+    
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  100% {
+
+    transition-timing-function: ease-in;
+    opacity: 1;
+  }
+}
+
+/* light speed out */
+@keyframes fadeOut {
+  0% {
+    
+    transition-timing-function: ease-in;
+    opacity: 1;
+  }
+
+  100% {
+
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+}

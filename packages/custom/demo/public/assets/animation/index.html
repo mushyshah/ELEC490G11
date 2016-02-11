@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CSS (load bootstrap from CDN) -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- JS (load angular and angular-animate from CDN) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-mocks.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body class="container" ng-app="animateApp" ng-controller="mainController">
+
+
+<!-- use ng-click to toggle true and false -->
+  <header class="text-center">
+    <h1>Animating Angular Apps<small>ngShow and ngHide</small></h1>
+
+    
+    <a class="btn btn-primary" href="#" ng-click="serverup = !serverup" ng-class="{ active: serverup }">Toggle Serverup</a>
+    <a class="btn btn-success" href="#" ng-click="serverdn = !serverdn" ng-class="{ active: serverdn }">Toggle Serverdn</a>
+  </header> 
+  <div  style="border: thin solid black; 
+        background-color:#f2f2f2;
+        border-radius: 25px;
+        margin-left:25px; 
+        margin-right: 25px; 
+        margin-top:25px; 
+        margin-bottom: 25px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height:100%;
+        ">
+
+  <table style="width:100%; ">
+
+    <tr style="text-align:center; ">
+       <div style="
+        height:200px;
+        margin: auto;
+        text-align:center; 
+
+        ">
+              <img src="ui.png" style="height:100%; ">
+      </div>
+    </tr>
+
+
+<!-- DATA FLOW 2 ROW ------------------------------ -->
+
+    <tr style="text-align:center; border-top: thin solid black;">
+       <div style="border-top: thin solid black; 
+        height:100px;
+        margin: auto;
+        text-align: center; 
+        padding-top:10px;
+        ">
+      <img src="up.png" style="height:100%;" ng-show="serverup">
+      <img src="down.png" style="height:100%;" ng-show="serverdn">
+      </div>
+    </tr>
+<!---------------------------------------------- -->
+
+
+<!-- SERVER ROW ------------------------------ -->
+
+      <tr style="text-align:center; ">
+       <div style="
+        height:200px;
+        margin: auto;
+        text-align:center; 
+        ">
+              <img src="viztool.png" style="height:100%;">
+      </div>
+
+
+  </tr>
+<!---------------------------------------------- -->
+
+
+<!-- DATA FLOW 2 ROW ------------------------------ -->
+
+    <tr style="text-align:center; border-top: thin solid black;">
+
+      <td style="margin: auto;">
+       <div style="
+        height:100px;
+        margin: auto;
+        padding-top:10px;
+        ">
+      <img src="up.png" style="height:100%;">
+      <img src="down.png" style="height:100%;">
+      </div>
+    </td>
+
+
+      <td style="margin: auto;">
+       <div style="
+        height:100px;
+        margin: auto;
+        padding-top:10px;
+        ">
+      <img src="up.png" style="height:100%;">
+      <img src="down.png" style="height:100%;">
+      </div>
+    </td>
+
+      <td style="margin: auto;">
+       <div style="
+        height:100px;
+        margin: auto;
+        padding-top:10px;
+        ">
+      <img src="up.png" style="height:100%;">
+      <img src="down.png" style="height:100%;">
+      </div>
+    </td>
+
+
+    </tr>
+<!---------------------------------------------- -->
+
+
+<!-- BACKEND ROW ------------------------------ -->
+    <tr style="text-align:center;">
+
+      <td style="margin: auto;">
+       <div style="
+        width:150px;
+        margin: auto;
+        ">
+      <img src="mongodb.png" style="width:100%; height:100%;">
+      </div>
+    </td>
+
+
+      <td style="margin: auto;">
+       <div style="
+        width:150px;
+        margin: auto;
+        ">
+      <img src="d3.png" style="width:100%; height:100%;">
+      </div>
+    </td>
+
+      <td style="margin: auto;">
+       <div style="
+        width:150px;
+        margin: auto;
+        ">
+      <img src="fluid.png" style="width:100%; height:100%;">
+      </div>
+    </td>
+
+    </tr>
+<!---------------------------------------------- -->
+
+  </table>
+
+</div>
+  
+  <div class="row"> 
+
+    
+      <!-- show and hide the lion picture -->
+       <!--  <img src="arrow.png" ng-show="lions"> -->
+      
+  </div>
+  
+</body>
+</html>
