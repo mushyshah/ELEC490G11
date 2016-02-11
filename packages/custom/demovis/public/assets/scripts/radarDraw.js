@@ -76,7 +76,7 @@ var RadarChart = {
      *
      **/
     // initiate default config
-    var w = 320;
+    var w = 300;
     var h = 300;
     var config = {
       w: w,

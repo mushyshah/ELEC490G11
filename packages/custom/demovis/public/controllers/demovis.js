@@ -33,7 +33,7 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
       // initialize controller functions
       ctrl.selectExample(ctrl.exampleSelected);
       ctrl.config = {
-        w: 300,
+        w: 320,
         h: 300,
         facet: false,
         levels: 4,
