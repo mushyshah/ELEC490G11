@@ -30,7 +30,7 @@ module.exports = function(Demo, app, auth, database) {
         });
 
         animationModel.fluiddn(function(){
-            animation.mongodn(function(){});
+            animationModel.mongodn(function(){});
         });
       });
 
