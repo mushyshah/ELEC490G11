@@ -112,7 +112,7 @@ exports.responseCompleted = function(responseid, output){
                     result.completed = 1;
                     result.responseid = responseid;
 
-                    result.JB = parsed['qbaao3mphc'] ;
+                    result.JB = parsed['qBaao3MphC'] ;
                     result.BS = parsed['Q6fy0l54ot'] ;
                     result.SS = parsed['Np7drncuzl'] ;
                     result.FD = parsed['Oxyvy2mi50'] ;
