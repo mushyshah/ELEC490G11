@@ -37,7 +37,9 @@ $scope.check = function() {
             
         });
 
-  $timeout(function(){$scope.tick()}, 500);
+  $scope.serverup=!$scope.serverup;
+
+  $timeout(function(){$scope.tick()}, 1000);
 
 }
 
