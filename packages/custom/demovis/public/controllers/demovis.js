@@ -153,50 +153,62 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
       $scope.ZL = Math.round(c.ZL * 100) / 100;
 
       
-      if($scope.SS>3 && $scope.SS<=4)
-            $('#OSS4').show();
-      else if($scope.SS>2 && $scope.SS<=3)
-            $('#OSS3').show();
-      else if($scope.SS>1 && $scope.SS<=2)
-            $('#OSS2').show();
-      else if($scope.SS>=0 && $scope.SS<=1)
-            $('#OSS1').show();
+           if($scope.SS == 5)
+            $('#SS5').show();
+      else if($scope.SS == 4)
+            $('#SS4').show();
+      else if($scope.SS == 3)
+            $('#SS3').show();
+      else if($scope.SS == 2)
+            $('#SS2').show();
+      else if($scope.SS == 1)
+            $('#SS1').show();
 
-      if($scope.FD>3 && $scope.FD<=4)
-            $('#OMSS4').show();
-      else if($scope.FD>2 && $scope.FD<=3)
-            $('#OMSS3').show();
-      else if($scope.FD>1 && $scope.FD<=2)
-            $('#OMSS2').show();
-      else if($scope.FD>=0 && $scope.FD<=1)
-            $('#OMSS1').show();
+           if($scope.FD == 5)
+            $('#FD5').show();
+      else if($scope.FD == 4)
+            $('#FD4').show();
+      else if($scope.FD == 3)
+            $('#FD3').show();
+      else if($scope.FD == 2)
+            $('#FD2').show();
+      else if($scope.FD == 1)
+            $('#FD1').show();
+           
+           if($scope.BS == 5)
+            $('#BS5').show();
+      else if($scope.BS == 4)
+            $('#BS4').show();
+      else if($scope.BS == 3)
+            $('#BS3').show();
+      else if($scope.BS == 2)
+            $('#BS2').show();
+      else if($scope.BS == 1)
+            $('#BS1').show();
 
-      if($scope.BS>3 && $scope.BS<=4)
-            $('#LBSS4').show();
-      else if($scope.BS>2 && $scope.BS<=3)
-            $('#LBSS3').show();
-      else if($scope.BS>1 && $scope.BS<=2)
-            $('#LBSS2').show();
-      else if($scope.BS>=0 && $scope.BS<=1)
-            $('#LBSS1').show();
+          if($scope.JB == 5)
+            $('#JB5').show();
+      else if($scope.JB == 4)
+            $('#JB4').show();
+      else if($scope.JB == 3)
+            $('#JB3').show();
+      else if($scope.JB == 2)
+            $('#JB2').show();
+      else if($scope.JB == 1)
+            $('#JB1').show();
 
-      if($scope.JB>3 && $scope.JB<=4)
-            $('#SESS4').show();
-      else if($scope.JB>2 && $scope.JB<=3)
-            $('#SESS3').show();
-      else if($scope.JB>1 && $scope.JB<=2)
-            $('#SESS2').show();
-      else if($scope.JB>=0 && $scope.JB<=1)
-            $('#SESS1').show();
+          if($scope.ZL == 5)
+            $('#ZL5').show();
+      else if($scope.ZL == 4)
+            $('#ZL4').show();
+      else if($scope.ZL == 3)
+            $('#ZL3').show();
+      else if($scope.ZL == 2)
+            $('#ZL2').show();
+      else if($scope.ZL == 1)
+            $('#ZL1').show();
 
-      if($scope.ZL>3 && $scope.ZL<=4)
-            $('#TRSS4').show();
-      else if($scope.ZL>2 && $scope.ZL<=3)
-            $('#TRSS3').show();
-      else if($scope.ZL>1 && $scope.ZL<=2)
-            $('#TRSS2').show();
-      else if($scope.ZL>=0 && $scope.ZL<=1)
-            $('#TRSS1').show();
+
 
     }
             
