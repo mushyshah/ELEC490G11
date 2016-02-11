@@ -12,7 +12,7 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/newResponse')
     .get(function(req, res) {
 
-      animationModel.fluiddn(function(){});
+      animationModel.serverdn(function(){
 
       fluidApi.newResponse(function(result){
         console.log('\n\nOUTPUT AT ROUTER: %j',result) + '\n';
@@ -28,7 +28,14 @@ module.exports = function(Demo, app, auth, database) {
 
             //res.json({ message: 'Response created!' });
         });
+
+        animationModel.fluiddn(function(){});
       });
+
+
+      })
+
+
   });
 
   app.route('/api/demo/state')
