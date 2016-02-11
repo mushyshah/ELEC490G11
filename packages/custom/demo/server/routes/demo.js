@@ -45,8 +45,7 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/findResponse/:responseid')
     .get(function(req, res) {
 
-      animationModel.serverdn();
-      animationModel.mongodn();
+
       console.log('responseid = '+req.params.responseid);
         responseCheck.responseCheck(req.params.responseid,function(result){
         res.json(result);
@@ -75,7 +74,6 @@ module.exports = function(Demo, app, auth, database) {
     .post(function(req, res) {
 
         animationModel.fluidup();
-        animationModel.mongodown();
         console.log("RESPONSE COMPLETED = "+req.body._id);
         fluidApi.responseCompleted(req.body._id,function(result){});
 
