@@ -29,7 +29,9 @@ module.exports = function(Demo, app, auth, database) {
             //res.json({ message: 'Response created!' });
         });
 
-        animationModel.fluiddn(function(){});
+        animationModel.fluiddn(function(){
+            animation.mongodn(function(){});
+        });
       });
 
 
