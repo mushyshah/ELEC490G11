@@ -1,7 +1,7 @@
 'use strict';
 
 // directive function sunburst
-angular.module('mean.demovis').directive('radar', function() {
+angular.module('mean.demovis').directive('radar1', function() {
   // directive function sunburst
   console.log("\n\nWTF IS HAPPEINING DIRECTIVE\n\n");
     return {
