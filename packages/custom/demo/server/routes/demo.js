@@ -37,6 +37,7 @@ module.exports = function(Demo, app, auth, database) {
         res.json(result);
         console.log("OUTOUT: "+result);
       });
+        animationModel.resetState();
   });
 
   app.route('/api/demo/findResponse/:responseid')

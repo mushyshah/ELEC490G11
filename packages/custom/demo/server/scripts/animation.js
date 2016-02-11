@@ -29,7 +29,13 @@ exports.stateCheck = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
 
-                var send = response;
+                result(response);
+        });   
+};
+
+exports.resetState = function(){
+
+    animationModel.findOne({'usage' : 'state'}, function(err, response) {
 
                 response.serverup = false;
                 response.serverdn = false;
@@ -42,10 +48,6 @@ exports.stateCheck = function(result){
                   
                 response.fluidup = false;
                 response.fluiddn = false;
-
-                response.save(function(err){});
-
-                result(send);
 
         });   
 };
