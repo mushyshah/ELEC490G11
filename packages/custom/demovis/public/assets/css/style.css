@@ -69,7 +69,6 @@ pre {
 .checkbox {
   margin-left: 20px;
 }
- Customizable classes used in D3 vis, uncomment to customize
 .svg-vis {
   width: 500px;
   height: 450px;
