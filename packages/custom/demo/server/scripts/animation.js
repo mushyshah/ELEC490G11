@@ -111,6 +111,7 @@ exports.fluiddn = function(){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.fluiddn = true;
+                console.log("Saved:"+response);
                 response.save(function(err){});
         });   
 };
