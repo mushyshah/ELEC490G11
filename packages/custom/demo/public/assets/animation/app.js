@@ -35,8 +35,9 @@ $scope.check = function() {
               $scope.fluidup = data.fluidup;
               $scope.fluiddn = data.fluiddn;
             
-            $timeout(function(){$scope.tick()}, 1000);
         });
+
+  $timeout(function(){$scope.tick()}, 500);
 
 }
 
@@ -67,6 +68,8 @@ $scope.tick = function() {
 
         if($scope.fluiddn==true)
             $scope.fluiddn=false;
+
+      $scope.check();
 
   };
 
