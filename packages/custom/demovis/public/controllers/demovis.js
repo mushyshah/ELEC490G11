@@ -140,10 +140,10 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
         $('#alreadySubmitted').show();
           
       // // just pump in random data here...
-      powerGauge1.update(c.JB); //<-------------------------------------gauge values
-      powerGauge2.update(c.BS);
-      powerGauge3.update(c.SS);
-      powerGauge4.update(c.FD);
+      powerGauge1.update(c.SS); //<-------------------------------------gauge values
+      powerGauge2.update(c.FD);
+      powerGauge3.update(c.BS);
+      powerGauge4.update(c.JB);
       powerGauge5.update(c.ZL);
 
       $scope.JB = Math.round(c.JB * 100) / 100;
@@ -153,40 +153,40 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
       $scope.ZL = Math.round(c.ZL * 100) / 100;
 
       
-      if($scope.JB>3 && $scope.JB<=4)
+      if($scope.SS>3 && $scope.SS<=4)
             $('#OSS4').show();
-      else if($scope.JB>2 && $scope.JB<=3)
+      else if($scope.SS>2 && $scope.SS<=3)
             $('#OSS3').show();
-      else if($scope.JB>1 && $scope.JB<=2)
+      else if($scope.SS>1 && $scope.SS<=2)
             $('#OSS2').show();
-      else if($scope.JB>=0 && $scope.JB<=1)
+      else if($scope.SS>=0 && $scope.SS<=1)
             $('#OSS1').show();
 
-      if($scope.BS>3 && $scope.BS<=4)
+      if($scope.FD>3 && $scope.FD<=4)
             $('#OMSS4').show();
-      else if($scope.BS>2 && $scope.BS<=3)
+      else if($scope.FD>2 && $scope.FD<=3)
             $('#OMSS3').show();
-      else if($scope.BS>1 && $scope.BS<=2)
+      else if($scope.FD>1 && $scope.FD<=2)
             $('#OMSS2').show();
-      else if($scope.BS>=0 && $scope.BS<=1)
+      else if($scope.FD>=0 && $scope.FD<=1)
             $('#OMSS1').show();
 
-      if($scope.SS>3 && $scope.SS<=4)
+      if($scope.BS>3 && $scope.BS<=4)
             $('#LBSS4').show();
-      else if($scope.SS>2 && $scope.SS<=3)
+      else if($scope.BS>2 && $scope.BS<=3)
             $('#LBSS3').show();
-      else if($scope.SS>1 && $scope.SS<=2)
+      else if($scope.BS>1 && $scope.BS<=2)
             $('#LBSS2').show();
-      else if($scope.SS>=0 && $scope.SS<=1)
+      else if($scope.BS>=0 && $scope.BS<=1)
             $('#LBSS1').show();
 
-      if($scope.FD>3 && $scope.FD<=4)
+      if($scope.JB>3 && $scope.JB<=4)
             $('#SESS4').show();
-      else if($scope.FD>2 && $scope.FD<=3)
+      else if($scope.JB>2 && $scope.JB<=3)
             $('#SESS3').show();
-      else if($scope.FD>1 && $scope.FD<=2)
+      else if($scope.JB>1 && $scope.JB<=2)
             $('#SESS2').show();
-      else if($scope.FD>=0 && $scope.FD<=1)
+      else if($scope.JB>=0 && $scope.JB<=1)
             $('#SESS1').show();
 
       if($scope.ZL>3 && $scope.ZL<=4)
