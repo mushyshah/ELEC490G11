@@ -50,7 +50,7 @@ module.exports = function(Demo, app, auth, database) {
 
     });
 
-  app.route('/api/surveys/responseComplete')
+  app.route('/api/demo/responseComplete')
     .post(function(req, res) {
 
         console.log("RESPONSE COMPLETED = "+req.body._id);
