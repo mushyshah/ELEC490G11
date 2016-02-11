@@ -55,68 +55,76 @@ exports.resetState = function(){
 };
 
 
-exports.serverup = function(){
+exports.serverup = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.serverup = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.serverdn = function(){
+exports.serverdn = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.serverdn = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.d3up = function(){
+exports.d3up = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.d3up = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.d3dn = function(){
+exports.d3dn = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.d3dn = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.mongoup = function(){
+exports.mongoup = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.mongoup = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.mongodn = function(){
+exports.mongodn = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.mongodn = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.fluidup = function(){
+exports.fluidup = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.fluidup = true;
                 response.save(function(err){});
+                result();
         });   
 };
 
-exports.fluiddn = function(){
+exports.fluiddn = function(result){
 
     animationModel.findOne({'usage' : 'state'}, function(err, response) {
                 response.fluiddn = true;
                 console.log("Saved:"+response);
                 response.save(function(err){});
+                result();
         });   
 };
 

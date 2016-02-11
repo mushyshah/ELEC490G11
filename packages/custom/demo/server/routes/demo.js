@@ -12,7 +12,7 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/newResponse')
     .get(function(req, res) {
 
-      animationModel.fluiddn();
+      animationModel.fluiddn(function(){});
 
       fluidApi.newResponse(function(result){
         console.log('\n\nOUTPUT AT ROUTER: %j',result) + '\n';
@@ -39,13 +39,12 @@ module.exports = function(Demo, app, auth, database) {
         res.json(result);
         console.log("OUTOUT: "+result);
       });
-        animationModel.resetState();
+        animationModel.resetState(function(){});
   });
 
   app.route('/api/demo/findResponse/:responseid')
     .get(function(req, res) {
 
-        animationModel.mongoup();
       console.log('responseid = '+req.params.responseid);
         responseCheck.responseCheck(req.params.responseid,function(result){
         res.json(result);
@@ -56,7 +55,7 @@ module.exports = function(Demo, app, auth, database) {
     app.route('/api/demo/isResponseComplete/:responseid')
     .get(function(req, res) {
 
-      animationModel.serverdn();
+      animationModel.serverdn(function(){});
       console.log('\n\n Checking response for: %d',req.params.responseid) + '\n';
       responseCheck.responseCheck(req.params.responseid, function(response) {
             //if (err)
@@ -64,7 +63,7 @@ module.exports = function(Demo, app, auth, database) {
             //res.json(response);
              console.log('\n\nResponse Complete: %j',response) + '\n';
              if(response.completed==1)
-              animationModel.serverup();
+              animationModel.serverup(function(){});
             res.send(response);
         });
 
@@ -73,19 +72,26 @@ module.exports = function(Demo, app, auth, database) {
   app.route('/api/demo/responseComplete')
     .post(function(req, res) {
 
-        animationModel.fluidup();
+        animationModel.fluidup(function(){
+            animationModel.mongodn(function(){
+
+
         console.log("RESPONSE COMPLETED = "+req.body._id);
         fluidApi.responseCompleted(req.body._id,function(result){});
 
         res.send("thanks");
+
+            });
+
+        });
   });
 
 
   app.route('/api/demo/postFeedback')
     .post(function(req, res) {
 
-        animationModel.serverdn();
-        animationModel.fluiddn();
+        // animationModel.serverdn();
+        // animationModel.fluiddn();
 
         console.log(req.body.feedbackMessage);
         responseCheck.submitFeedback(req.body.responseID,req.body.feedbackMessage,function(result){
