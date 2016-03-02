@@ -130,49 +130,49 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       $scope.TRSS = Math.round(c.TRSS * 100) / 100;
       
       if($scope.OSS>3 && $scope.OSS<=4)
-            $('#OSS4').show(); $scope.OSS = 3;
+            {$('#OSS4').show(); $scope.OSS = 3;}
       else if($scope.OSS>2 && $scope.OSS<=3)
-            $('#OSS3').show(); $scope.OSS = 2;
+            {$('#OSS3').show(); $scope.OSS = 2;}
       else if($scope.OSS>1 && $scope.OSS<=2)
-            $('#OSS2').show(); $scope.OSS = 1;
+            {$('#OSS2').show(); $scope.OSS = 1;}
       else if($scope.OSS>=0 && $scope.OSS<=1)
-            $('#OSS1').show(); $scope.OSS = 0;
+            {$('#OSS1').show(); $scope.OSS = 0;}
 
       if($scope.OMSS>3 && $scope.OMSS<=4)
-            $('#OMSS4').show(); $scope.OMSS = 3;
+            {$('#OMSS4').show(); $scope.OMSS = 3;}
       else if($scope.OMSS>2 && $scope.OMSS<=3)
-            $('#OMSS3').show(); $scope.OMSS = 2;
+            {$('#OMSS3').show(); $scope.OMSS = 2;}
       else if($scope.OMSS>1 && $scope.OMSS<=2)
-            $('#OMSS2').show(); $scope.OMSS = 1;
+            {$('#OMSS2').show(); $scope.OMSS = 1;}
       else if($scope.OMSS>=0 && $scope.OMSS<=1)
-            $('#OMSS1').show(); $scope.OMSS = 0;
+            {$('#OMSS1').show(); $scope.OMSS = 0;}
 
       if($scope.LBSS>3 && $scope.LBSS<=4)
-            $('#LBSS4').show(); $scope.LBSS = 3;
+            {$('#LBSS4').show(); $scope.LBSS = 3;}
       else if($scope.LBSS>2 && $scope.LBSS<=3)
-            $('#LBSS3').show(); $scope.LBSS = 2;
+            {$('#LBSS3').show(); $scope.LBSS = 2;}
       else if($scope.LBSS>1 && $scope.LBSS<=2)
-            $('#LBSS2').show(); $scope.LBSS = 1;
+            {$('#LBSS2').show(); $scope.LBSS = 1;}
       else if($scope.LBSS>=0 && $scope.LBSS<=1)
-            $('#LBSS1').show(); $scope.LBSS = 0;
+            {$('#LBSS1').show(); $scope.LBSS = 0;}
 
       if($scope.SESS>3 && $scope.SESS<=4)
-            $('#SESS4').show(); $scope.SESS = 3;
+            {$('#SESS4').show(); $scope.SESS = 3;}
       else if($scope.SESS>2 && $scope.SESS<=3)
-            $('#SESS3').show(); $scope.SESS = 2;
+            {$('#SESS3').show(); $scope.SESS = 2;}
       else if($scope.SESS>1 && $scope.SESS<=2)
-            $('#SESS2').show(); $scope.SESS = 1;
+            {$('#SESS2').show(); $scope.SESS = 1;}
       else if($scope.SESS>=0 && $scope.SESS<=1)
-            $('#SESS1').show(); $scope.SESS = 0;
+            {$('#SESS1').show(); $scope.SESS = 0;}
 
       if($scope.TRSS>3 && $scope.TRSS<=4)
-            $('#TRSS4').show(); $scope.TRSS = 3;
+            {$('#TRSS4').show(); $scope.TRSS = 3;}
       else if($scope.TRSS>2 && $scope.TRSS<=3)
-            $('#TRSS3').show(); $scope.TRSS = 2;
+            {$('#TRSS3').show(); $scope.TRSS = 2;}
       else if($scope.TRSS>1 && $scope.TRSS<=2)
-            $('#TRSS2').show(); $scope.TRSS = 1;
+            {$('#TRSS2').show(); $scope.TRSS = 1;}
       else if($scope.TRSS>=0 && $scope.TRSS<=1)
-            $('#TRSS1').show(); $scope.TRSS = 0;
+            {$('#TRSS1').show(); $scope.TRSS = 0;}
 
 
       // // just pump in random data here...
