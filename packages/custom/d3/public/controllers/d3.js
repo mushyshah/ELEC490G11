@@ -80,7 +80,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       clipWidth: 175,
       clipHeight: 100,
       ringWidth: 35,
-      maxValue: 4,
+      maxValue: 3,
       transitionMs: 3000,
     });
     var powerGauge2 = gauge2('#power-gauge2', {
@@ -88,7 +88,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       clipWidth: 175,
       clipHeight: 100,
       ringWidth: 35,
-      maxValue: 4,
+      maxValue: 3,
       transitionMs: 3000,
     });
     var powerGauge3 = gauge3('#power-gauge3', {
@@ -96,7 +96,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       clipWidth: 175,
       clipHeight: 100,
       ringWidth: 35,
-      maxValue: 4,
+      maxValue: 3,
       transitionMs: 3000,
     });
     var powerGauge4 = gauge4('#power-gauge4', {
@@ -104,7 +104,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       clipWidth: 175,
       clipHeight: 100,
       ringWidth: 35,
-      maxValue: 4,
+      maxValue: 3,
       transitionMs: 3000,
     });
     var powerGauge5 = gauge5('#power-gauge5', {
@@ -112,7 +112,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       clipWidth: 175,
       clipHeight: 100,
       ringWidth: 35,
-      maxValue: 4,
+      maxValue: 3,
       transitionMs: 3000,
     });
     
