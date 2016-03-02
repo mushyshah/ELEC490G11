@@ -65,13 +65,70 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     // function selectExample
     function selectExample() {
       $http.get('/api/surveys/findResponse/'+$scope.responseID).success(function(data) {
-        console.log(data);
-        updateReadings(data);
-        ctrl.csv = data;
+
+      binData(data,function(dataOut){
+        console.log(dataOut);
+        updateReadings(dataOut);
+        ctrl.csv = dataOut;
+      });
+
       });
     }
 
+/*********************************************************************************************/
 
+    function binData(d,result){
+
+      var out = d;
+
+      if(d.OSS>3 && d.OSS<=4)
+            out.OSS = 4;
+      else if(d.OSS>2 && d.OSS<=3)
+            out.OSS = 3;
+      else if(d.OSS>1 && d.OSS<=2)
+            out.OSS = 2;
+      else if(d.OSS>=0 && d.OSS<=1)
+            out.OSS = 1;
+
+      if(d.OMSS>3 && d.OMSS<=4)
+            out.OMSS = 4;
+      else if(d.OMSS>2 && d.OMSS<=3)
+            out.OMSS = 3;
+      else if(d.OMSS>1 && d.OMSS<=2)
+            out.OMSS = 2;
+      else if(d.OMSS>=0 && d.OMSS<=1)
+            out.OMSS = 1;
+
+      if(d.LBSS>3 && d.LBSS<=4)
+            out.LBSS = 4;
+      else if(d.LBSS>2 && d.LBSS<=3)
+            out.LBSS = 3;
+      else if(d.LBSS>1 && d.LBSS<=2)
+            out.LBSS = 2;
+      else if(d.LBSS>=0 && d.LBSS<=1)
+            out.LBSS = 1;
+
+      if(d.SESS>3 && d.SESS<=4)
+            out.SESS = 4;
+      else if(d.SESS>2 && d.SESS<=3)
+            out.SESS = 3;
+      else if(d.SESS>1 && d.SESS<=2)
+            out.SESS = 2;
+      else if(d.SESS>=0 && d.SESS<=1)
+            out.SESS = 1;
+
+      if(d.TRSS>3 && d.TRSS<=4)
+           out.TRSS = 4;
+      else if(d.TRSS>2 && d.TRSS<=3)
+           out.TRSS = 3;
+      else if(d.TRSS>1 && d.TRSS<=2)
+           out.TRSS = 2;
+      else if(d.TRSS>=0 && d.TRSS<=1)
+           out.TRSS = 1;
+
+         result(out);
+
+    }
 
 /*********************************************************************************************/
 
