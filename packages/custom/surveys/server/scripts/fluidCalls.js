@@ -22,6 +22,7 @@ exports.newResponse = function(result){
       // res is here
              console.log(options.host + ':' + res.statusCode);
              res.setEncoding('utf8');
+
       // Continuously update stream with data
             var body = '';
             res.on('data', function(d) {
@@ -29,11 +30,10 @@ exports.newResponse = function(result){
             });
             res.on('end', function() {
 
-                // Data reception is done, do whatever with it!
-                var parsed = JSON.parse(body);
-                result(parsed);
-                console.log("\n\nResponse:\n %j \n", parsed);
-                });
+            // Data reception is done, do whatever with it!
+            var parsed = JSON.parse(body);
+            result(parsed);
+            });
 
     });
 
@@ -43,27 +43,27 @@ exports.newResponse = function(result){
     req.write('');
     req.end();
 
-    // console.log('\n\nURL RESULT: ' + result.url) + '\n';
-    //return result;
 }
 
 exports.submitFeedback = function(responseid,message,result){
    
-  var request = require("request");
+      var request = require("request");
 
-var options = { method: 'PUT',
-  url: 'http://queensu.fluidsurveys.com/api/v3/surveys/980627/responses/'+responseid+'/',
-  headers: 
-   { 'cache-control': 'no-cache',
-     authorization: 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'},
-  formData: { cTATXC7Msw: message } };
+      var options = { method: 'PUT',
+            url: 'http://queensu.fluidsurveys.com/api/v3/surveys/980627/responses/'+responseid+'/',
+            headers: 
+               { 'cache-control': 'no-cache',
+                 authorization: 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'
+               },
+            formData: { cTATXC7Msw: message } 
+      };
 
-request(options, function (error, response, body) {
-  console.log(options.host + options.path + ':' + response.statusCode);
-  if (error) throw new Error(error);
+      request(options, function (error, response, body) {
+        console.log(options.host + options.path + ':' + response.statusCode);
+        if (error) throw new Error(error);
 
-  console.log(body);
-});
+        console.log(body);
+      });
 
 }
 
@@ -99,12 +99,8 @@ exports.responseCompleted = function(responseid, output){
 
               // Data reception is done, do whatever with it!
               var parsed = JSON.parse(body);
-              //output(parsed);
-              console.log("\n\nGET RESPONSE:\n"+ parsed + "\n\n");
 
                     responseModel.findOne({'responseid' : responseid}, function(err, result) {
-
-                      console.log("RESULT OF FETCH: %j",result);
                     // if (err)
                     //     res.send(err);
 
@@ -151,28 +147,20 @@ exports.responseCompleted = function(responseid, output){
                     result.OR = result.O6;
 
 
-                          result.save(function(err) {
-                          if (err)
-                          output.send('NO-DATA');
-                        });
+                    result.save(function(err) {
+                    if (err)
+                    output.send('NO-DATA');
+                    });
 
-                //     var complete = req.body;
-
-                // console.log('\n\nResponse Complete: %j',complete) + '\n';
-
-                 console.log('\n\nSAVED STUFF: \n' + result) + '\n';
-                 output(result);
+                   output(result);
 
                   });
       });
 
     });
 
-    // write the request parameters
-    //req.write(':id:'+responseid);
     req.write('');
     req.end();
 
-    //return result;
 }
 

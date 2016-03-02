@@ -9,7 +9,6 @@ function radarDraw(scope, element) {
   // watch for changes on scope.data
   scope.$watch("[csv, config]", function() {
     var csv = scope.csv;
-    //console.log('\n\nHELLO ITS A ME\n\n');
     var config = scope.config;
     var data = csv2json(csv);
     RadarChart.draw(element[0], data, config);  // call the D3 RadarChart.draw function to draw the vis on changes to data or config

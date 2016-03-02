@@ -26,7 +26,6 @@ exports.submitFeedback = function(responseid, message, result){
 
 exports.responseCheck = function(responseid, result){
 
-    console.log("responseID at script:"+responseid);
 
     responseModel.findOne({'responseid' : responseid}, function(err, response) {
             if (err)

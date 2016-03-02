@@ -16,22 +16,13 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
     function init() {
     $scope.feedbackMessage = "";
     $scope.responseID = $stateParams.responseID;
-    console.log("D3 CONTROLLER RESPONSE ID: " + $scope.responseID); 
-    $scope.random = 5;
 
-      console.log("\n\n\nWHASSUPNO\n\n\n");
       // initialize controller variables
-      ctrl.examples = [
-      //"response1",
-      //"data_the_avengers",
-		  "response_hardcoded"
-      ];
-      ctrl.exampleSelected = ctrl.examples[0];
       ctrl.getData = getData;
       ctrl.selectExample = selectExample;
 
       // initialize controller functions
-      ctrl.selectExample(ctrl.exampleSelected);
+      ctrl.selectExample();
       ctrl.config = {
         w: 300,
         h: 300,
@@ -81,7 +72,7 @@ angular.module('mean.demovis').controller('DemovisController', ['$scope', 'Globa
         ctrl.csv = data;
 
       });
-      console.log("\n\n\nWHASSUPNO\n\n\n");
+
     }
 
 

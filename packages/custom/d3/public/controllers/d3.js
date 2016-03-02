@@ -15,22 +15,12 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     function init() {
     $scope.feedbackMessage = "";
     $scope.responseID = $stateParams.responseID;
-    console.log("D3 CONTROLLER RESPONSE ID: " + $scope.responseID); 
-    $scope.random = 5;
-
-      console.log("\n\n\nWHASSUPNO\n\n\n");
       // initialize controller variables
-      ctrl.examples = [
-      //"response1",
-      //"data_the_avengers",
-		  "response_hardcoded"
-      ];
-      ctrl.exampleSelected = ctrl.examples[0];
       ctrl.getData = getData;
       ctrl.selectExample = selectExample;
 
       // initialize controller functions
-      ctrl.selectExample(ctrl.exampleSelected);
+      ctrl.selectExample();
       ctrl.config = {
         w: 300,
         h: 300,
@@ -73,13 +63,12 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     }      
 
     // function selectExample
-    function selectExample(item) {
+    function selectExample() {
       $http.get('/api/surveys/findResponse/'+$scope.responseID).success(function(data) {
         console.log(data);
         updateReadings(data);
         ctrl.csv = data;
       });
-      console.log("\n\n\nWHASSUPNO\n\n\n");
     }
 
 
@@ -129,9 +118,6 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     
     function updateReadings(c) {
 
-      // $http.get('/api/surveys/gaugeData/56433548/').success(function(data) {
-     //        console.log(data);
-
      if(c.feedbackComplete == 0)
         $('#feedbackBox').show();
     else if(c.feedbackComplete == 1)
@@ -149,7 +135,6 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       $scope.LBSS = Math.round(c.LBSS * 100) / 100;
       $scope.SESS = Math.round(c.SESS * 100) / 100;
       $scope.TRSS = Math.round(c.TRSS * 100) / 100;
-
       
       if($scope.OSS>3 && $scope.OSS<=4)
             $('#OSS4').show();
@@ -203,13 +188,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     powerGauge3.render();
     powerGauge4.render();
     powerGauge5.render();
-    
-    // update reading values
-    //updateReadings(c);
-
 
 /*********************************************************************************************/
-
 
   }
 

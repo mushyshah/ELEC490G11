@@ -15,18 +15,16 @@ module.exports = function(Demo, app, auth, database) {
       animationModel.serverdn(function(){
 
       fluidApi.newResponse(function(result){
-        console.log('\n\nOUTPUT AT ROUTER: %j',result) + '\n';
         res.json(result);
         var response = new responseModel();      // create a new instance 
         response.responseid = result._id;  // set id
         response.completed = 0;
         response.feedbackComplete = 0;
+
         // save the response and check for errors
         response.save(function(err) {
             if (err)
                 res.send(err);
-
-            //res.json({ message: 'Response created!' });
         });
 
         animationModel.fluiddn(function(){
@@ -42,25 +40,20 @@ module.exports = function(Demo, app, auth, database) {
 
   app.route('/api/demo/state')
     .get(function(req, res) {
-
-      console.log('requesting state');
         animationModel.stateCheck(function(result){
         res.json(result);
-        console.log("OUTOUT: "+result);
       });
         animationModel.resetState(function(){});
   });
 
   app.route('/api/demo/findResponse/:responseid')
     .get(function(req, res) {
-
       animationModel.d3up(function(){
         animationModel.mongoup(function(){
           animationModel.serverup(function(){});
         });
 
       });
-
       console.log('responseid = '+req.params.responseid);
         responseCheck.responseCheck(req.params.responseid,function(result){
         res.json(result);
@@ -72,12 +65,8 @@ module.exports = function(Demo, app, auth, database) {
     .get(function(req, res) {
 
       animationModel.serverdn(function(){});
-      console.log('\n\n Checking response for: %d',req.params.responseid) + '\n';
       responseCheck.responseCheck(req.params.responseid, function(response) {
-            //if (err)
-                //res.send(err);
-            //res.json(response);
-             console.log('\n\nResponse Complete: %j',response) + '\n';
+
              if(response.completed==1)
               animationModel.serverup(function(){});
             res.send(response);
@@ -91,11 +80,8 @@ module.exports = function(Demo, app, auth, database) {
         animationModel.fluidup(function(){
             animationModel.mongodn(function(){
 
-
-        console.log("RESPONSE COMPLETED = "+req.body._id);
         fluidApi.responseCompleted(req.body._id,function(result){});
 
-        res.send("thanks");
 
             });
 

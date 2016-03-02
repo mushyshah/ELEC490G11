@@ -17,9 +17,7 @@ $scope.init = function () {
             $scope.fluidResponse = data.url;
             $scope.responseid = data._id;
             $scope.tick(data._id);
-            //$scope.responseComplete(data._id);
             $scope.completed = 0;
-            //$interval($scope.tick(data._id),1000, 100);
             initializing=false;
             console.log(data.url);
         })
@@ -30,8 +28,6 @@ $scope.init = function () {
 };
 
 $scope.evaluate = function(value){
-
-    console.log('EVALUATED'+value);
 
     if(value==0)
       return false;
@@ -48,7 +44,7 @@ $scope.evaluate = function(value){
 
 $scope.tick = function(resid) {
         $http.get('/api/demo/isResponseComplete/'+resid).success(function (data) {
-            console.log('IS IT COMPLETED? %d',data.completed);
+
             $scope.completed = data.completed;
 
             if(data.completed==1)
@@ -57,11 +53,6 @@ $scope.tick = function(resid) {
             $timeout(function(){$scope.tick(resid)}, 1000);
         });
   };
-
-$scope.$watch('completed',
-              function() {console.log('RESPONSE COMPLETED');}
-      );
-
 
     $scope.global = Global;
     $scope.package = {

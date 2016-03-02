@@ -32,7 +32,6 @@ exports.newResponse = function(result){
                 // Data reception is done, do whatever with it!
                 var parsed = JSON.parse(body);
                 result(parsed);
-                console.log("\n\nResponse:\n %j \n", parsed);
                 });
 
     });
@@ -100,11 +99,9 @@ exports.responseCompleted = function(responseid, output){
               // Data reception is done, do whatever with it!
               var parsed = JSON.parse(body);
               //output(parsed);
-              console.log("\n\nGET RESPONSE:"+ body + "\n\n");
 
                     responseModel.findOne({'responseid' : responseid}, function(err, result) {
 
-                      console.log("RESULT OF FETCH: %j",result);
                     // if (err)
                     //     res.send(err);
 
@@ -129,12 +126,6 @@ exports.responseCompleted = function(responseid, output){
                           if (err)
                           output.send('NO-DATA');
                         });
-
-                //     var complete = req.body;
-
-                // console.log('\n\nResponse Complete: %j',complete) + '\n';
-
-                 console.log('\n\nSAVED STUFF: \n' + result) + '\n';
                  output(result);
 
                   });

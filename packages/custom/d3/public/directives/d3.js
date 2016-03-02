@@ -3,7 +3,6 @@
 // directive function sunburst
 angular.module('mean.d3').directive('radar', function() {
   // directive function sunburst
-  console.log("\n\nWTF IS HAPPEINING DIRECTIVE\n\n");
     return {
       restrict: "E",
       scope: {
