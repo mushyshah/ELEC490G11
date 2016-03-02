@@ -122,13 +122,6 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
         $('#feedbackBox').show();
     else if(c.feedbackComplete == 1)
         $('#alreadySubmitted').show();
-          
-      // // just pump in random data here...
-      powerGauge1.update(c.OSS); //<-------------------------------------gauge values
-      powerGauge2.update(c.OMSS);
-      powerGauge3.update(c.LBSS);
-      powerGauge4.update(c.SESS);
-      powerGauge5.update(c.TRSS);
 
       $scope.OSS = Math.round(c.OSS * 100) / 100;
       $scope.OMSS = Math.round(c.OMSS * 100) / 100;
@@ -137,49 +130,58 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       $scope.TRSS = Math.round(c.TRSS * 100) / 100;
       
       if($scope.OSS>3 && $scope.OSS<=4)
-            $('#OSS4').show();
+            $('#OSS4').show(); $scope.OSS = 3;
       else if($scope.OSS>2 && $scope.OSS<=3)
-            $('#OSS3').show();
+            $('#OSS3').show(); $scope.OSS = 2;
       else if($scope.OSS>1 && $scope.OSS<=2)
-            $('#OSS2').show();
+            $('#OSS2').show(); $scope.OSS = 1;
       else if($scope.OSS>=0 && $scope.OSS<=1)
-            $('#OSS1').show();
+            $('#OSS1').show(); $scope.OSS = 0;
 
       if($scope.OMSS>3 && $scope.OMSS<=4)
-            $('#OMSS4').show();
+            $('#OMSS4').show(); $scope.OMSS = 3;
       else if($scope.OMSS>2 && $scope.OMSS<=3)
-            $('#OMSS3').show();
+            $('#OMSS3').show(); $scope.OMSS = 2;
       else if($scope.OMSS>1 && $scope.OMSS<=2)
-            $('#OMSS2').show();
+            $('#OMSS2').show(); $scope.OMSS = 1;
       else if($scope.OMSS>=0 && $scope.OMSS<=1)
-            $('#OMSS1').show();
+            $('#OMSS1').show(); $scope.OMSS = 0;
 
       if($scope.LBSS>3 && $scope.LBSS<=4)
-            $('#LBSS4').show();
+            $('#LBSS4').show(); $scope.LBSS = 3;
       else if($scope.LBSS>2 && $scope.LBSS<=3)
-            $('#LBSS3').show();
+            $('#LBSS3').show(); $scope.LBSS = 2;
       else if($scope.LBSS>1 && $scope.LBSS<=2)
-            $('#LBSS2').show();
+            $('#LBSS2').show(); $scope.LBSS = 1;
       else if($scope.LBSS>=0 && $scope.LBSS<=1)
-            $('#LBSS1').show();
+            $('#LBSS1').show(); $scope.LBSS = 0;
 
       if($scope.SESS>3 && $scope.SESS<=4)
-            $('#SESS4').show();
+            $('#SESS4').show(); $scope.SESS = 3;
       else if($scope.SESS>2 && $scope.SESS<=3)
-            $('#SESS3').show();
+            $('#SESS3').show(); $scope.SESS = 2;
       else if($scope.SESS>1 && $scope.SESS<=2)
-            $('#SESS2').show();
+            $('#SESS2').show(); $scope.SESS = 1;
       else if($scope.SESS>=0 && $scope.SESS<=1)
-            $('#SESS1').show();
+            $('#SESS1').show(); $scope.SESS = 0;
 
       if($scope.TRSS>3 && $scope.TRSS<=4)
-            $('#TRSS4').show();
+            $('#TRSS4').show(); $scope.TRSS = 3;
       else if($scope.TRSS>2 && $scope.TRSS<=3)
-            $('#TRSS3').show();
+            $('#TRSS3').show(); $scope.TRSS = 2;
       else if($scope.TRSS>1 && $scope.TRSS<=2)
-            $('#TRSS2').show();
+            $('#TRSS2').show(); $scope.TRSS = 1;
       else if($scope.TRSS>=0 && $scope.TRSS<=1)
-            $('#TRSS1').show();
+            $('#TRSS1').show(); $scope.TRSS = 0;
+
+
+      // // just pump in random data here...
+      powerGauge1.update($scope.OSS); //<-------------------------------------gauge values
+      powerGauge2.update($scope.OMSS);
+      powerGauge3.update($scope.LBSS);
+      powerGauge4.update($scope.SESS);
+      powerGauge5.update($scope.TRSS);
+
 
     }
             
