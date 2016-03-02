@@ -25,8 +25,6 @@ SystemPackage.register(function(app, auth, database, circles) {
 
   // The middleware in config/express will run before this code
 
-  console.log('\n\nSYSTEM APP.JS IS RESPONDING ONLY ') + '\n\n';
-
   // Set views path, template engine and default layout
   app.set('views', __dirname + '/server/views');
 

@@ -18,7 +18,6 @@ Surveys.register(function(app, auth, database) {
   //We enable routing. By default the Package Object is passed to the routes
   Surveys.routes(app, auth, database);
 
-  console.log('\n\nWOKR OWKR WORK OWORK \n\n');
   //We are adding a link to the main menu for all authenticated users
   Surveys.menus.add({
     title: 'surveys example page',

@@ -28,8 +28,6 @@ Theme.register(function(app, auth, database) {
   Theme.aggregateAsset('css', 'theme.css');
   Theme.angularDependencies(['mean.system']);
 
-  console.log('\n\nWT FIS HIPAPEINGN THEMESEMEMS') + '\n\n';
-
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback
