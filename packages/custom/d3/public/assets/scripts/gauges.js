@@ -21,7 +21,7 @@
 			
 			transitionMs				: 750,
 			
-			majorTicks					: 4,
+			majorTicks					: 3,
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
@@ -171,7 +171,7 @@
 			
 			transitionMs				: 750,
 			
-			majorTicks					: 4,
+			majorTicks					: 3,
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
@@ -321,7 +321,7 @@
 			
 			transitionMs				: 750,
 			
-			majorTicks					: 4,
+			majorTicks					: 3,
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
@@ -471,7 +471,7 @@
 			
 			transitionMs				: 750,
 			
-			majorTicks					: 4,
+			majorTicks					: 3,
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
@@ -621,7 +621,7 @@
 			
 			transitionMs				: 750,
 			
-			majorTicks					: 4,
+			majorTicks					: 3,
 			labelFormat					: d3.format(',g'),
 			labelInset					: 10,
 			
