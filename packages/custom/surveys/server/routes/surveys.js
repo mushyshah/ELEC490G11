@@ -11,9 +11,6 @@ module.exports = function(Surveys, app, auth, database) {
   //Home Route
   var index = require('../controllers/index')(Surveys);
 
-    // app.route('/')
-    // .get(index.render);
-
     app.route('/api/surveys/newResponse')
     .get(function(req, res) {
       
@@ -59,9 +56,9 @@ app.route('/api/surveys/gaugeData/:responseid')
     app.route('/api/surveys/isResponseComplete/:responseid')
     .get(function(req, res) {
       responseCheck.responseCheck(req.params.responseid, function(response) {
-            //if (err)
-                //res.send(err);
-            //res.json(response);
+            if (err)
+                res.send(err);
+            
             res.send(response);
         });
 

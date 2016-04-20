@@ -2,18 +2,23 @@
 
 var https = require('https');
 var responseModel = require('../models/response');
+var surveyParams = require('../config/surveyconfig.json');
 
+var surveyHost = surveyParams.surveyHost;
+var surveyID = surveyParams.surveyID;
+var feedbackQuestionID = surveyParams.feedbackQuestionID;
+var username = surveyParams.surveyUsername;
+var password = surveyParams.surveyPassword;
+var auth = "Basic " + new Buffer(username + ":" + password, "utf8").toString("base64");
 exports.newResponse = function(result){
    
     var options = {
-      host: 'queensu.fluidsurveys.com',
+      host: surveyHost,
       port: '443',
-      //path: '/api/v3/surveys/987323/responses/',
-      path: '/api/v3/surveys/1455865/responses/',
-      //Authorization: 'Basic MW1tczNAcXVlZW5zdS5jYTpicmlhbmZyYW5r',
+      path: '/api/v3/surveys/'+surveyID+'/responses/',
       method: 'POST',
       headers: {
-        'Authorization': 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'
+        'Authorization': auth
       }
     };
 
@@ -50,12 +55,14 @@ exports.submitFeedback = function(responseid,message,result){
    
   var request = require("request");
 
-var options = { method: 'PUT',
-  url: 'http://queensu.fluidsurveys.com/api/v3/surveys/1455865/responses/'+responseid+'/',
-  headers: 
-   { 'cache-control': 'no-cache',
-     authorization: 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'},
-  formData: { qeoQ28N2xy: message } };
+      var options = { method: 'PUT',
+            url: 'http://'+ surveyHost +'/api/v3/surveys/'+ surveyID +'/responses/'+responseid+'/',
+            headers: 
+               { 'cache-control': 'no-cache',
+                 authorization: auth
+               },
+            formData: { feedbackQuestionID: message } 
+      };
 
 request(options, function (error, response, body) {
   console.log(options.host + options.path + ':' + response.statusCode);
@@ -71,14 +78,12 @@ request(options, function (error, response, body) {
 exports.responseCompleted = function(responseid, output){
    
     var options = {
-      host: 'queensu.fluidsurveys.com',
+      host: surveyHost,
       port: '443',
-      //path: '/api/v3/surveys/987323/responses/'+responseid+'/',
-      path: '/api/v3/surveys/1455865/responses/'+responseid+'/',
-      //Authorization: 'Basic MW1tczNAcXVlZW5zdS5jYTpicmlhbmZyYW5r',
+      path: '/api/v3/surveys/'+surveyID+'/responses/'+responseid+'/',
       method: 'GET',
       headers: {
-        'Authorization': 'Basic ZW5naW5lZXJpbmcuc3VydmV5c0BxdWVlbnN1LmNhOnN1cnZleXMyMDE1'
+        'Authorization': auth
       }
     };
 
@@ -109,11 +114,11 @@ exports.responseCompleted = function(responseid, output){
                     result.completed = 1;
                     result.responseid = responseid;
 
-                    result.JB = parsed['qBaao3MphC'] ;
-                    result.BS = parsed['q6fy0L54Ot'] ;
-                    result.SS = parsed['nP7DrNCUzl'] ;
-                    result.FD = parsed['oxyVy2MI50'] ;
-                    result.ZL = parsed['HC0F9B7MyR'] ;
+                    result.JB = parsed[surveyParams.JB] ;
+                    result.BS = parsed[surveyParams.BS] ;
+                    result.SS = parsed[surveyParams.SS] ;
+                    result.FD = parsed[surveyParams.FD] ;
+                    result.ZL = parsed[surveyParams.ZL] ;
 
                     result.JBR = 1.2 ;
                     result.BSR = 3.2 ;
@@ -134,10 +139,8 @@ exports.responseCompleted = function(responseid, output){
     });
 
     // write the request parameters
-    //req.write(':id:'+responseid);
     req.write('');
     req.end();
 
-    //return result;
 }
 
