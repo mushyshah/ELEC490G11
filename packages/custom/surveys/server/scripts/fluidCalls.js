@@ -13,9 +13,6 @@ var surveyParams = require('../config/surveyconfig.json');
 
 exports.newResponse = function(result){
    
-
-
-
     var options = {
       host: surveyHost,
       port: '443',
@@ -68,6 +65,7 @@ exports.submitFeedback = function(responseid,message,result){
       };
 
       request(options, function (error, response, body) {
+        console.log('post feedback: ' + message);
         console.log(options.host + options.path + ':' + response.statusCode);
         if (error) throw new Error(error);
 
