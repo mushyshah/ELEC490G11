@@ -53,6 +53,7 @@ exports.newResponse = function(result){
 
 exports.submitFeedback = function(responseid,message,result){
    
+    fdata = feedbackQuestionID+':'+message;
       var request = require("request");
 
       var options = { method: 'PUT',
@@ -61,7 +62,7 @@ exports.submitFeedback = function(responseid,message,result){
                { 'cache-control': 'no-cache',
                  authorization: auth
                },
-            formData: { feedbackQuestionID.toString(): message } 
+            formData: fdata
       };
 
       request(options, function (error, response, body) {
