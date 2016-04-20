@@ -61,11 +61,11 @@ exports.submitFeedback = function(responseid,message,result){
                { 'cache-control': 'no-cache',
                  authorization: auth
                },
-            formData: { [feedbackQuestionID]: message } 
+            formData: { feedbackQuestionID: message } 
       };
 
       request(options, function (error, response, body) {
-        console.log(feedbackQuestionID + ' : ' + message);
+        console.log(options.formData + ' : ' + message);
         console.log(options.url + ':' + response.statusCode);
         if (error) throw new Error(error);
 
