@@ -32,7 +32,7 @@ $scope.evaluate = function(value){
       return false;
     else
     {
-      $location.path('/d3/example/'+$scope.responseid);
+      $location.path('/d3/result/'+$scope.responseid);
       return true;
     }
 }
