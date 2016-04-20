@@ -61,7 +61,7 @@ exports.submitFeedback = function(responseid,message,result){
                { 'cache-control': 'no-cache',
                  authorization: auth
                },
-            formData: { feedbackQuestionID: message } 
+            formData: { feedbackQuestionID.toString(): message } 
       };
 
       request(options, function (error, response, body) {
