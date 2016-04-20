@@ -9,12 +9,19 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
     };
 
     var ctrl = this;
+
+    //Run Initialization function
     init();
 
-    // function init
+    //Initialization Function
     function init() {
+
+    //Initialize feedback message to blank
     $scope.feedbackMessage = "";
+
+    //Set responseID in scope
     $scope.responseID = $stateParams.responseID;
+
       // initialize controller variables
       ctrl.getData = getData;
       ctrl.selectExample = selectExample;
@@ -38,7 +45,6 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
         showPolygons: true
       };
 
-      //$location.url('/d3/example/');
     }
 
 
@@ -47,28 +53,38 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       ctrl.csv = $fileContent;
     }
 
+    //Function called when pressing submit on feedback submission box
     $scope.submitFeedback = function() {
+
+        //Create data variable containing feedback for specific responseID
         var data = {
                       'feedbackMessage': $scope.feedbackMessage,
                       'responseID': $scope.responseID
                     };
 
+        //Hide feedback submission box as feedback has been submitteed
         $('#feedbackBox').hide();
+
+        //Show Feedback submitted message
         $('#feedbackSubmitted').show();
 
-
+        //Push feedback to servey api from where it'll get pushed back to fluid
         $http.post("/api/surveys/postFeedback", data).success(function(data, status) {
             console.log("Feedback Posted");
         })
     }      
 
-    // function selectExample
+    //Function selectExample performs GET request to survey API
+    // with specific responseID to retrieve the data for that response
     function selectExample() {
       $http.get('/api/surveys/findResponse/'+$scope.responseID).success(function(data) {
 
-      binData(data,function(dataOut){
-        console.log(dataOut);
+        binData(data,function(dataOut){
+        
+        //Update Visualization Readings
         updateReadings(dataOut);
+
+        //Update scope data
         ctrl.csv = dataOut;
       });
 
@@ -77,6 +93,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
 /*********************************************************************************************/
 
+    //Functino to bin the data received before displaying it
     function binData(d,result){
 
       var out = d;
@@ -132,6 +149,7 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
 /*********************************************************************************************/
 
+    //Setting up all the power gauges
     var powerGauge1 = gauge1('#power-gauge1', {
       size: 175,
       clipWidth: 175,
@@ -173,19 +191,26 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
       transitionMs: 3000,
     });
     
+    //Function to update the readings on the visualizations
     function updateReadings(c) {
 
+    //If feedback is not submitted, show feedback box
+    // otherwise show "feedback submitted" message
      if(c.feedbackComplete == 0)
         $('#feedbackBox').show();
     else if(c.feedbackComplete == 1)
         $('#alreadySubmitted').show();
 
+      //Round data to nearest decimal
       $scope.OSS = Math.round(c.OSS * 100) / 100;
       $scope.OMSS = Math.round(c.OMSS * 100) / 100;
       $scope.LBSS = Math.round(c.LBSS * 100) / 100;
       $scope.SESS = Math.round(c.SESS * 100) / 100;
       $scope.TRSS = Math.round(c.TRSS * 100) / 100;
       
+
+      //Conditionally show the different messages for
+      // dimensions based on dimension value
       if($scope.OSS>3 && $scope.OSS<=4)
             {$('#OSS4').show(); $scope.OSS = 3;}
       else if($scope.OSS>2 && $scope.OSS<=3)
@@ -232,8 +257,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
             {$('#TRSS1').show(); $scope.TRSS = 0;}
 
 
-      // // just pump in random data here...
-      powerGauge1.update($scope.OSS); //<-------------------------------------gauge values
+      //Updata the data on the gauges
+      powerGauge1.update($scope.OSS);
       powerGauge2.update($scope.OMSS);
       powerGauge3.update($scope.LBSS);
       powerGauge4.update($scope.SESS);
@@ -241,7 +266,8 @@ angular.module('mean.d3').controller('D3Controller', ['$scope', 'Global', 'D3','
 
 
     }
-            
+     
+    //Rerender the gauges       
     powerGauge1.render();
     powerGauge2.render();
     powerGauge3.render();

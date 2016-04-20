@@ -9,7 +9,6 @@ module.exports = function(D3, app, auth, database) {
     D3.render('index', {
       package: 'd3'
     }, function(err, html) {
-      //Rendering a view from the Package server/views
       res.send(html);
     });
 });
