@@ -53,7 +53,7 @@ exports.newResponse = function(result){
 
 exports.submitFeedback = function(responseid,message,result){
    
-    fdata = feedbackQuestionID+':'+message;
+    var fdata = feedbackQuestionID+':'+message;
       var request = require("request");
 
       var options = { method: 'PUT',
