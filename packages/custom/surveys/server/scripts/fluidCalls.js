@@ -66,7 +66,7 @@ exports.submitFeedback = function(responseid,message,result){
 
       request(options, function (error, response, body) {
         console.log('post feedback: ' + message);
-        console.log(options.host + options.path + ':' + response.statusCode);
+        console.log(options.url + ':' + response.statusCode);
         if (error) throw new Error(error);
 
         console.log(body);
