@@ -3,13 +3,24 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+
 var ResponseSchema = new Schema({
+	//Response ID
 	responseid: Number,
+	
+	//Whether survey was completed or not
 	completed: Number,
+	
+	//Whether survey was updated or not (not used atm)
 	updated: Number,
+
+	//String field to contain feedback message
 	feedbackMessage: String,
+	//Field to use as a flag to indicate whether or not feedback
+	// has been completed or not
 	feedbackComplete: Number,
 
+	//Fields to hold all the different data
 	OM1: Number,
 	OM2r: Number,
 	OM3r: Number,
@@ -50,4 +61,5 @@ var ResponseSchema = new Schema({
 	
 });
 
+//Export model
 module.exports = mongoose.model('Response', ResponseSchema);

@@ -1,18 +1,27 @@
 'use strict';
 
 var https = require('https');
+
+//Import response database model
 var responseModel = require('../models/response');
+
+//Import config parameters for survey
 var surveyParams = require('../config/surveyconfig.json');
 
+//Initializing variables from survey params
  var surveyHost = surveyParams.surveyHost;
  var surveyID = surveyParams.surveyID;
  var feedbackQuestionID = surveyParams.feedbackQuestionID;
  var username = surveyParams.surveyUsername;
  var password = surveyParams.surveyPassword;
+
+ //base64 encoded authentication
  var auth = "Basic " + new Buffer(username + ":" + password, "utf8").toString("base64");
 
+//This function does a get response to fluidsurveys to get a new fluid response
 exports.newResponse = function(result){
-   
+
+  //Create GET options
     var options = {
       host: surveyHost,
       port: '443',
@@ -23,20 +32,19 @@ exports.newResponse = function(result){
       }
     };
 
-    //var result;
+    //Create what happens upon performing the request
     var req = https.request(options,function(res) {
-      // res is here
              console.log(options.host + options.path + ':' + res.statusCode);
              res.setEncoding('utf8');
 
-      // Continuously update stream with data
+      //Continuously update stream with data
             var body = '';
             res.on('data', function(d) {
                 body += d;
             });
             res.on('end', function() {
 
-            // Data reception is done, do whatever with it!
+            // Data reception is done, return it
             var parsed = JSON.parse(body);
             result(parsed);
             });
@@ -45,18 +53,25 @@ exports.newResponse = function(result){
 
 
 
-    // write the request parameters
+    //Perform the request
     req.write('');
     req.end();
 
 }
 
+//This function pushes the message provided back to fluid surveys
+// at the response id provided. It pushes it to a 'hidden' question 
+//  as specified by the 'feedbackQuestionID' field in the response model
 exports.submitFeedback = function(responseid,message,result){
-   
+
+    //Create variable key JSON for formdata
     var fdata = {};
     fdata[feedbackQuestionID] = message;
+
+      //Require request module
       var request = require("request");
 
+      //Create optinos for request
       var options = { method: 'PUT',
             url: 'http://'+ surveyHost +'/api/v3/surveys/'+ surveyID +'/responses/'+responseid+'/',
             headers: 
@@ -66,20 +81,23 @@ exports.submitFeedback = function(responseid,message,result){
             formData: fdata
       };
 
+      //Log data and response upon pushing feedback
       request(options, function (error, response, body) {
         console.log(options.formData + ' : ' + message);
         console.log(options.url + ':' + response.statusCode);
         if (error) throw new Error(error);
-
         console.log(body);
       });
 
 }
 
 
-
+//Function used to retrieve all the data for the specific survey response
+// after the response has been completed. A GET request is done to the 
+//  fluid survers to retrieve all the data of the specific response
+//   and then store it in the local DB
 exports.responseCompleted = function(responseid, output){
-   
+      
     var options = {
       host: surveyHost,
       port: '443',
@@ -90,7 +108,7 @@ exports.responseCompleted = function(responseid, output){
       }
     };
 
-    //var result;
+    //Create HTTP request options
     var req = https.request(options,function(res) {
 
       // res is here
@@ -104,14 +122,15 @@ exports.responseCompleted = function(responseid, output){
 
           res.on('end', function() {
 
-              // Data reception is done, do whatever with it!
+              // Data reception is done
               var parsed = JSON.parse(body);
 
+                    //Find article in database that corresponds to this specific responsID
                     responseModel.findOne({'responseid' : responseid}, function(err, result) {
                      if (err)
                          res.send(err);
 
-                    // save the response and check for errors
+                    //Save all the response data in DB with responseID
                     result.completed = 1;
                     result.responseid = responseid;
 
@@ -153,12 +172,13 @@ exports.responseCompleted = function(responseid, output){
                     result.OSS = (result.O1 + result.O2 + result.O3r + result.O4)/4 ;
                     result.OR = result.O6;
 
-
+                    //Save result to DB
                     result.save(function(err) {
                     if (err)
                     output.send('NO-DATA');
                     });
 
+                    //Return result
                    output(result);
 
                   });
