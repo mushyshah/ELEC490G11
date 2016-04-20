@@ -1,16 +1,22 @@
 <!doctype html>
+<!-- This document is the main HTML code for the web-based visualization tool. The document is responsible for the 
+     layout/design of the webpage through HTML and inline CSS. Read through the file to understand how the main results
+	 page is coded. -->
 <html ng-app="mean.d3">
 <head>
     <meta content="width=320px, initial-scale=1, user-scalable=yes" name="viewport" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- The css stylesheet that is referenced for this webpage. -->
     <link type="text/css" rel="stylesheet" href="/d3/assets/css/stylesheet.css" />
   <!-- scripts -->
+  <!-- I don't think custom.js is needed/used at all, but for now it's still here. -->
   <script type="text/javascript" src="/d3/assets/scripts/custom.js"></script>
   <script type="text/javascript" src="/d3/assets/scripts/gauges.js"></script>
   <script src="/d3/assets/scripts/d3.js"></script>
   <script src="/d3/assets/scripts/radarDraw.js"></script>
 
-
+	<!-- Some of the CSS templates for different parts of the page (could theoretically be moved to the stylesheet, 
+	     but as far as functionality goes, it does not matter one way or another). -->
 	<meta charset="utf-8">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 	<style>
@@ -105,7 +111,7 @@
 </head>
 <body>
  
-    <!-- Your Content Here -->
+    <!-- Top of the results page -->
 	<br>
 	<div id="nav" style = "text-align: center; font-size:16pt;" >
 			<p><b>Your Survey Results</b></p>
@@ -118,7 +124,8 @@
 	<br>
 	<p>Further down on the page you will find a description of your results in each category, and what they reveal about your approach to learning. Finally, at the bottom of the page, is a section where you can comment on your results.</p>
 	</div>
-		<section class="container" ng-controller="D3Controller as radar"> <!-- changed body to div -->
+		<!-- Spider Diagram of results -->
+		<section class="container" ng-controller="D3Controller as radar">
 				<div style = "text-align:center;">
 			<!-- main content -->
 			<div class="main container">
@@ -130,6 +137,7 @@
 				</div>
 			</div>
 	</div>
+	<!-- Main table containing each of the d3.js power gauges and descriptions -->
 	<div id = "nav" style = "width: 190px">
 	<p><b>More Details</b></p>
 	</div>
@@ -161,7 +169,7 @@
 		</td>
 <td style="padding-left:20px;">
 <b>Independent Learning</b>
-
+<!-- Hidden divs. Only one is displayed based on the survey results, which is coded in the JavaScript files. -->
 <div hidden id="OSS4">You apply organizational techniques in an adaptive, systematic manner, and actively maintain work schedules.</div>
 <div hidden id="OSS3">You apply organizational techniques systematically and maintain schedules for the majority of your work.</div>
 <div hidden id="OSS2">You organize your work process, and attempt to structure study schedules.</div>
@@ -189,7 +197,7 @@
 </td>
 <td style="padding-left:20px;">
 <b>Self-Motivation</b>
-
+<!-- Hidden divs. Only one is displayed based on the survey results, which is coded in the JavaScript files. -->
 <div hidden id="OMSS4"> Your intense interest leads you to apply a range of strategies to pursue topics in depth; grades are a secondary concern for you. You would be described as intrinsically motivated. </div>
 <div hidden id="OMSS3">You usually explore topics in depth, and utilize what you already know to pose questions that help you learn. </div>
 <div hidden id="OMSS2">You explore topics, and try to connect ideas, but it is your desire for grades, and/or not wanting to let others down that motivates you. </div>
@@ -217,7 +225,7 @@
 </td>
 <td style="padding-left:20px;">
 <b>Flexible Learning</b>
-
+<!-- Hidden divs. Only one is displayed based on the survey results, which is coded in the JavaScript files. -->
 <div hidden id="LBSS4">You believe in mastery of your own learning, with full control over time and effort distribution, study techniques. </div>
 <div hidden id="LBSS3">You feel that with enough time, effort, and the appropriate study techniques you can be successful. </div>
 <div hidden id="LBSS2">You feel like you can control some factors that lead to success or failure, like effort, technique, time, or study setting. </div>
@@ -245,6 +253,7 @@
 
 <td style="padding-left:20px;">
 <b>Confidence</b>
+<!-- Hidden divs. Only one is displayed based on the survey results, which is coded in the JavaScript files. -->
 <div hidden id="SESS4">You feel very confident in holding all of the necessary knowledge/ skills you need to excel in meeting all of the learning goals. </div>
 <div hidden id="SESS3">You are confident that you have the appropriate level of knowledge/ skills to meet the learning goals. </div>
 <div hidden id="SESS2">You have confidence that your your knowledge/ skills are adequate to meet most of the learning goals. </div>
@@ -273,7 +282,7 @@
 
 <td style="padding-left:20px;">
 <b>Making Connections</b>
-			
+<!-- Hidden divs. Only one is displayed based on the survey results, which is coded in the JavaScript files. -->	
 <div hidden id="TRSS4">You make explicit references to previous learning and apply knowledge and skills in an innovative (new and creative) ways that demonstrate comprehension/ performance.</div>
 <div hidden id="TRSS3">You make references to previous learning, established through application of knowledge and skills, demonstrating comprehension/ performance.</div>
 <div hidden id="TRSS2">You make some references to previous learning and apply that knowledge/ those skills to demonstrate comprehension/ performance.</div>
@@ -288,6 +297,7 @@
 </div>
 <br>
 <br>
+<!-- Another sub-section. Contains resources for student learning. -->
 <div id = "nav" style = "width: 190px">
 <p><b>Resources</b></p>
 </div>
@@ -300,7 +310,7 @@
 </div>
 <br>
 <br>
-
+<!-- Section for leaving feedback. -->
 <div id = "nav" style = "width: 190px">
 <p ><b>Comments</b></p>
 </div>
@@ -323,6 +333,7 @@
 </div>
 </div>
 <br>
+<!-- Section for references. -->
 <div id = "nav" style = "width: 190px">
 <p><b>References</b></p>
 </div>
@@ -335,28 +346,6 @@
 	Docs.fluidsurveys.com,. (2016). FluidSurveys APIs Docs. Retrieved January 2016, from <a href = "http://docs.fluidsurveys.com/">http://docs.fluidsurveys.com/</a> <br>
 </div>
 </section>
-<!-- <div class="overlay-bg">
-</div>
-<div class="overlay-content popup1">
-    <div id="nav" >
-			<p style = "padding-left: 50px;"><b>Your Results</b></p>
-		</div>
-		<div style = "text-align:center;">
-		<div class="main container">
-			<div class="visualization col-xs-7">
-				<div class="visualization">
-					<radar csv="radar.csv" config="radar.config"></radar>
-				</div>
-			</div>
-		</div>
-		<p style = "text-align:center; font-family:calibri">Thank you for taking the time to complete our survey!<br>
-		Above is a spider diagram showing your results.
-		When you are ready, please feel free to 
-		examine your results in more detail.</p>
-		<div style = "text-align:center;">
-			<button class="close-btn">Read More</button>
-		</div>
--->
 <br>
 </body>
 </html>

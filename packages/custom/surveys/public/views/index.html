@@ -1,9 +1,10 @@
 <section data-ng-controller="SurveysController" data-ng-init="init()">
   
+  <!-- Only show iFrame if evaluated == false-->
   <div ng-show="!evaluate(completed)">
+  	<!-- Create iframe with 'sanitized' fluidResponse URL. Used arbitrary 'height' that'll be large enough-->
   <iframe ng-src="{{trustSrc(fluidResponse)}}" frameborder="0" style="border: none; width:100%; height:3500px;" onload="parent.scrollTo(0,0);"></iframe>
   </div>
-
 
 </section>
 
